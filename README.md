@@ -1,4 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CS Blog
+
+A modern blog built with Next.js 15, focusing on computer science concepts, programming tutorials, and technology insights.
+
+## Features
+
+- 📚 Clean, responsive blog layout
+- 🎯 Individual blog post pages with dynamic routing
+- 🏷️ Tag-based categorization
+- 📱 Mobile-friendly design
+- ⚡ Fast static generation
+- 🎨 Beautiful UI with Tailwind CSS
+
+## Blog Structure
+
+- **Home Page** (`/`) - Welcome page with blog overview and navigation
+- **Blog Index** (`/blog`) - List of all blog posts
+- **Individual Posts** (`/blog/[slug]`) - Dynamic blog post pages
+
+### Sample Posts
+
+The blog comes with three sample posts:
+1. "Getting Started with Data Structures and Algorithms"
+2. "Understanding Big O Notation: A Complete Guide" 
+3. "Modern React Development with Hooks"
+
+## Project Structure
+
+```
+├── app/
+│   ├── blog/
+│   │   ├── [slug]/
+│   │   │   ├── page.tsx          # Individual blog post page
+│   │   │   └── not-found.tsx     # 404 page for missing posts
+│   │   └── page.tsx              # Blog index page
+│   ├── layout.tsx                # Root layout with navigation
+│   └── page.tsx                  # Home page
+├── components/
+│   └── Navigation.tsx            # Site navigation component
+├── lib/
+│   └── blog.ts                   # Blog data and utilities
+└── types/
+    └── blog.ts                   # TypeScript types for blog posts
+```
 
 ## Getting Started
 
@@ -16,9 +59,36 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Adding New Blog Posts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To add new blog posts, edit the `samplePosts` array in `lib/blog.ts`. Each post should have:
+
+- `slug`: URL-friendly identifier
+- `title`: Post title
+- `excerpt`: Brief description
+- `content`: Full post content (supports basic markdown-like formatting)
+- `date`: Publication date
+- `tags`: Array of category tags
+- `author`: Author name (optional)
+- `readingTime`: Estimated reading time in minutes (optional)
+
+## Extending the Blog
+
+### Adding Real Content Management
+
+Replace the static data in `lib/blog.ts` with:
+- Markdown files (using libraries like `gray-matter` and `remark`)
+- Headless CMS integration (Contentful, Strapi, etc.)
+- Database integration (PostgreSQL, MongoDB, etc.)
+
+### Adding Features
+
+- Search functionality
+- Comment system
+- RSS feed
+- Related posts
+- Author pages
+- Categories/tags pages
 
 ## Learn More
 

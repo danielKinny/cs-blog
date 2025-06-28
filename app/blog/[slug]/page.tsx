@@ -1,0 +1,123 @@
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import { getPostBySlug, getPostSlugs } from '@/lib/blog';
+import { BlogPost } from '@/types/blog';
+
+interface BlogPostPageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const slugs = await getPostSlugs();
+  return slugs.map((slug) => ({
+    slug,
+  }));
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+    };
+  }
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+  };
+}
+
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <nav className="mb-8">
+          <Link 
+            href="/blog" 
+            className="text-black hover:text-gray-700 flex items-center gap-2"
+          >
+            ← Back to Blog
+          </Link>
+        </nav>
+
+        <header className="mb-8">
+          <h1 className="text-4xl font-bold text-black mb-4">
+            {post.title}
+          </h1>
+          
+          <div className="flex flex-wrap items-center gap-4 text-sm text-black mb-6">
+            <time dateTime={post.date}>
+              {new Date(post.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+            
+            {post.author && (
+              <span>by {post.author}</span>
+            )}
+            
+            {post.readingTime && (
+              <span>{post.readingTime} min read</span>
+            )}
+          </div>
+
+          <div className="flex flex-wrap gap-2 mb-6">
+            {post.tags.map((tag) => (
+              <span
+                key={tag}
+                className="bg-gray-200 text-black px-3 py-1 rounded-full text-sm"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </header>
+
+        <article className="bg-white rounded-lg shadow-md p-8 text-black">
+          <div className="prose prose-lg max-w-none">
+            <div dangerouslySetInnerHTML={{ __html: formatContent(post.content) }} />
+          </div>
+        </article>
+
+        <footer className="mt-12 pt-8 border-t border-gray-200">
+          <Link 
+            href="/blog" 
+            className="inline-flex items-center gap-2 text-black hover:text-gray-700"
+          >
+            ← Back to all posts
+          </Link>
+        </footer>
+      </div>
+    </div>
+  );
+}
+
+function formatContent(content: string): string {
+  return content
+    .replace(/^# (.*$)/gim, '<h1 class="text-3xl font-bold mb-4 mt-8 text-black">$1</h1>')
+    .replace(/^## (.*$)/gim, '<h2 class="text-2xl font-semibold mb-3 mt-6 text-black">$1</h2>')
+    .replace(/^### (.*$)/gim, '<h3 class="text-xl font-medium mb-2 mt-4 text-black">$1</h3>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-black">$1</strong>')
+    .replace(/\*(.*?)\*/g, '<em class="text-black">$1</em>')
+    .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto mb-4 text-black"><code class="text-sm text-black">$2</code></pre>')
+    .replace(/`(.*?)`/g, '<code class="bg-gray-100 px-1 py-0.5 rounded text-sm text-black">$1</code>')
+    .replace(/^\- (.*$)/gim, '<li class="mb-1 text-black">$1</li>')
+    .replace(/^\d+\. (.*$)/gim, '<li class="mb-1 text-black">$1</li>')
+    .replace(/\n\n/g, '</p><p class="mb-4 text-black">')
+    .replace(/^(?!<[h1-6]|<li|<pre|<ul|<ol)/gm, '<p class="mb-4 text-black">')
+    .replace(/<\/p><p class="mb-4 text-black">(<[h1-6])/g, '$1')
+    .replace(/<\/p><p class="mb-4 text-black">(<pre)/g, '$1')
+    + '</p>';
+}
