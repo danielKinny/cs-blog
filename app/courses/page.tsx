@@ -1,9 +1,26 @@
 import React from "react";
-import { getAllCourses } from '@/lib/course';
 import SearchableCourseList from './SearchableCourseList';
 
-export default function CoursesPage() {
-  const courses = getAllCourses();
+async function fetchCourses() {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/courses`, {
+      cache: 'no-store'
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch courses');
+    }
+    
+    const data = await response.json();
+    return data.courses || [];
+  } catch (error) {
+    console.error('Error fetching courses:', error);
+    return [];
+  }
+}
+
+export default async function CoursesPage() {
+  const courses = await fetchCourses();
 
   return (
     <div className="min-h-screen" style={{backgroundColor: '#fef2f2'}}>

@@ -34,7 +34,7 @@ export default function SearchableCourseList({ courses }: SearchableCourseListPr
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredCourses.map((course, index) => (
           <div
-            key={course.id}
+            key={course.courseID}
             className="bg-white rounded-lg shadow-lg border p-6 hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-slide-in-left opacity-0"
             style={{
               animationDelay: `${index * 0.1}s`,
