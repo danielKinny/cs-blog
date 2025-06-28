@@ -41,22 +41,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 py-12">
-        <nav className="mb-8">
+        <nav className="mb-8 animate-fade-in">
           <Link 
             href="/blog" 
-            className="text-black hover:text-gray-700 flex items-center gap-2"
+            className="text-black hover:text-gray-700 flex items-center gap-2 transition-all duration-200 hover:translate-x-1"
           >
             ← Back to Blog
           </Link>
         </nav>
 
-        <header className="mb-8">
+        <header className="mb-8 animate-slide-down">
           <h1 className="text-4xl font-bold text-black mb-4">
             {post.title}
           </h1>
           
-          <div className="flex flex-wrap items-center gap-4 text-sm text-black mb-6">
-            <time dateTime={post.date}>
+          <div className="flex flex-wrap items-center gap-4 text-sm text-black mb-6 animate-slide-up">
+            <time dateTime={post.date} className="transition-colors duration-200 hover:text-gray-600">
               {new Date(post.date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
@@ -65,19 +65,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </time>
             
             {post.author && (
-              <span>by {post.author}</span>
+              <span className="transition-colors duration-200 hover:text-gray-600">by {post.author}</span>
             )}
             
             {post.readingTime && (
-              <span>{post.readingTime} min read</span>
+              <span className="transition-colors duration-200 hover:text-gray-600">{post.readingTime} min read</span>
             )}
           </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
-            {post.tags.map((tag) => (
+            {post.tags.map((tag, index) => (
               <span
                 key={tag}
-                className="bg-gray-200 text-black px-3 py-1 rounded-full text-sm"
+                className="bg-gray-200 text-black px-3 py-1 rounded-full text-sm transform transition-all duration-200 hover:scale-110 hover:bg-gray-300 animate-fade-in"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  animationFillMode: 'forwards'
+                }}
               >
                 {tag}
               </span>
@@ -85,16 +89,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </header>
 
-        <article className="bg-white rounded-lg shadow-md p-8 text-black">
+        <article className="bg-white rounded-lg shadow-md p-8 text-black animate-fade-in-delay transform transition-all duration-300 hover:shadow-lg">
           <div className="prose prose-lg max-w-none">
             <div dangerouslySetInnerHTML={{ __html: formatContent(post.content) }} />
           </div>
         </article>
 
-        <footer className="mt-12 pt-8 border-t border-gray-200">
+        <footer className="mt-12 pt-8 border-t border-gray-200 animate-fade-in">
           <Link 
             href="/blog" 
-            className="inline-flex items-center gap-2 text-black hover:text-gray-700"
+            className="inline-flex items-center gap-2 text-black hover:text-gray-700 transition-all duration-200 hover:translate-x-1"
           >
             ← Back to all posts
           </Link>
