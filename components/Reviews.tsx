@@ -80,36 +80,36 @@ export default function Reviews() {
   const averageRating = reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length;
 
   return (
-    <div className="bg-white py-16">
+    <div className="bg-blue-900 py-16">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Readers Say</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">What Our Readers Say</h2>
           <div className="flex items-center justify-center gap-2 mb-2">
             {renderStars(Math.floor(averageRating))}
-            <span className="text-gray-600 ml-2">
+            <span className="text-blue-200 ml-2">
               {averageRating.toFixed(1)} out of 5 ({reviews.length} reviews)
             </span>
           </div>
-          <p className="text-gray-600">Join the community of learners who trust CS Blog</p>
+          <p className="text-blue-200">Join the community of learners who trust CS Blog</p>
         </div>
 
         <div className="grid gap-6 mb-8">
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border border-blue-100"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                <div className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center text-white font-semibold text-sm">
                   {review.avatar}
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
-                    <h3 className="font-semibold text-gray-900">{review.name}</h3>
+                    <h3 className="font-semibold text-blue-900">{review.name}</h3>
                     <div className="flex">{renderStars(review.rating)}</div>
                   </div>
-                  <p className="text-gray-700 mb-2">{review.comment}</p>
-                  <p className="text-gray-500 text-sm">{new Date(review.date).toLocaleDateString()}</p>
+                  <p className="text-blue-800 mb-2">{review.comment}</p>
+                  <p className="text-blue-600 text-sm">{new Date(review.date).toLocaleDateString()}</p>
                 </div>
               </div>
             </div>
@@ -120,16 +120,16 @@ export default function Reviews() {
           {!showForm ? (
             <button
               onClick={() => setShowForm(true)}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
+              className="bg-amber-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors duration-300 shadow-lg"
             >
               Write a Review
             </button>
           ) : (
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Share Your Experience</h3>
+            <div className="bg-white p-6 rounded-lg border border-blue-200">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Share Your Experience</h3>
               <form onSubmit={handleSubmitReview} className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="name" className="block text-sm font-medium text-blue-800 mb-1">
                     Your Name
                   </label>
                   <input
@@ -137,19 +137,19 @@ export default function Reviews() {
                     id="name"
                     value={newReview.name}
                     onChange={(e) => setNewReview({ ...newReview, name: e.target.value })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-900"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="rating" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="rating" className="block text-sm font-medium text-blue-800 mb-1">
                     Rating
                   </label>
                   <select
                     id="rating"
                     value={newReview.rating}
                     onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-900"
                   >
                     {[5, 4, 3, 2, 1].map((rating) => (
                       <option key={rating} value={rating}>
@@ -159,7 +159,7 @@ export default function Reviews() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="comment" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="comment" className="block text-sm font-medium text-blue-800 mb-1">
                     Your Review
                   </label>
                   <textarea
@@ -167,7 +167,7 @@ export default function Reviews() {
                     value={newReview.comment}
                     onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
                     rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-900"
                     placeholder="Tell us about your experience with CS Blog..."
                     required
                   />
@@ -175,7 +175,7 @@ export default function Reviews() {
                 <div className="flex gap-4 justify-center">
                   <button
                     type="submit"
-                    className="bg-blue-600 text-white px-6 py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors duration-300"
+                    className="bg-blue-900 text-white px-6 py-2 rounded-md font-semibold hover:bg-blue-800 transition-colors duration-300 shadow-lg"
                   >
                     Submit Review
                   </button>

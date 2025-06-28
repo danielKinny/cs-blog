@@ -17,13 +17,13 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-blue-50">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <header className="text-center mb-12 animate-fade-in">
-          <h1 className="text-4xl font-bold text-black mb-4 animate-slide-down">
+          <h1 className="text-4xl font-bold text-blue-900 mb-4 animate-slide-down">
             CS Blog
           </h1>
-          <p className="text-xl text-black animate-slide-up">
+          <p className="text-xl text-blue-800 animate-slide-up">
             Thoughts on computer science, programming, and technology
           </p>
         </header>

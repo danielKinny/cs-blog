@@ -26,7 +26,7 @@ export default function SearchableCourseList({ courses }: SearchableCourseListPr
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search courses by name, provider, category, or description..."
-          className="w-full text-black mx-auto mb-8 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transform transition-all duration-300 hover:scale-105 focus:scale-105"
+          className="w-full text-blue-900 mx-auto mb-8 px-4 py-2 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white transform transition-all duration-300 hover:scale-105 focus:scale-105"
         />
       </div>
 
@@ -34,33 +34,33 @@ export default function SearchableCourseList({ courses }: SearchableCourseListPr
         {filteredCourses.map((course, index) => (
           <div
             key={course.id}
-            className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 transform hover:scale-105 animate-slide-in-left opacity-0"
+            className="bg-white rounded-lg shadow-lg border border-blue-100 p-6 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:scale-105 animate-slide-in-left opacity-0"
             style={{
               animationDelay: `${index * 0.1}s`,
               animationFillMode: 'forwards'
             }}
           >
             <div className="flex flex-col h-full">
-              <h3 className="text-xl font-semibold text-black mb-3 line-clamp-2">
+              <h3 className="text-xl font-semibold text-blue-900 mb-3 line-clamp-2">
                 {course.title}
               </h3>
               
-              <p className="text-gray-600 mb-4 flex-grow line-clamp-3">
+              <p className="text-blue-800 mb-4 flex-grow line-clamp-3">
                 {course.description}
               </p>
               
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-md font-medium">
+                  <span className="bg-blue-100 text-blue-900 px-2 py-1 rounded-md font-medium">
                     {course.provider}
                   </span>
-                  <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded-md text-xs">
+                  <span className="bg-amber-100 text-amber-800 px-2 py-1 rounded-md text-xs">
                     {course.category}
                   </span>
                 </div>
                 
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <div className="flex items-center space-x-2 text-sm text-blue-700">
                     <span>⏱️ {course.duration}</span>
                     <span>📊 {course.level}</span>
                   </div>
@@ -70,7 +70,7 @@ export default function SearchableCourseList({ courses }: SearchableCourseListPr
                   href={course.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 text-center block font-medium"
+                  className="w-full bg-blue-900 text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors duration-200 text-center block font-medium shadow-lg"
                 >
                   View Course →
                 </a>
@@ -82,15 +82,15 @@ export default function SearchableCourseList({ courses }: SearchableCourseListPr
 
       {filteredCourses.length === 0 && courses.length > 0 && (
         <div className="text-center py-12 animate-fade-in">
-          <p className="text-black text-lg">No courses found matching "{searchTerm}"</p>
-          <p className="text-gray-600 text-sm mt-2">Try searching with different keywords</p>
+          <p className="text-blue-900 text-lg">No courses found matching "{searchTerm}"</p>
+          <p className="text-blue-700 text-sm mt-2">Try searching with different keywords</p>
         </div>
       )}
 
       {courses.length === 0 && (
         <div className="text-center py-12 animate-fade-in">
           <div className="animate-pulse-slow">
-            <p className="text-black text-lg">Loading courses...</p>
+            <p className="text-blue-900 text-lg">Loading courses...</p>
           </div>
         </div>
       )}
