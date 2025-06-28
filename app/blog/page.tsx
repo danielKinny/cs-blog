@@ -1,9 +1,30 @@
+"use client";
 import Link from 'next/link';
-import { BlogPost } from '@/types/blog';
 import { getAllPosts } from '@/lib/blog';
+import { useState, useEffect } from 'react';
+import { BlogPost } from '@/types/blog';
 
-export default async function BlogPage() {
-  const posts = await getAllPosts();
+export default function BlogPage() {
+const [searchTerm, setSearchTerm] = useState('');
+const [posts, setPosts] = useState<BlogPost[]>([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const allPosts = await getAllPosts();
+      setPosts(allPosts);
+    };
+
+    fetchPosts();
+  }, []);
+
+  const filterPosts = (searchTerm: string) => {
+    if (!searchTerm) return posts;
+
+    return posts.filter(post =>
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -17,8 +38,16 @@ export default async function BlogPage() {
           </p>
         </header>
 
+        <input
+          type="search"
+          value={searchTerm}
+          onChange = {(e) => setSearchTerm(e.target.value)}
+          placeholder="Search blog posts by name or tag..."
+          className="w-full text-black mx-auto mb-8 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+
         <div className="space-y-8">
-          {posts.map((post) => (
+          {filterPosts(searchTerm).map((post) => (
             <article
               key={post.slug}
               className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
