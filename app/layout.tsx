@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CS Blog - Computer Science & Programming",
+  title: "Beyond the Syllabus",
   description: "Your go-to resource for computer science concepts, programming tutorials, and technology insights. Learn algorithms, data structures, and modern development practices.",
 };
 

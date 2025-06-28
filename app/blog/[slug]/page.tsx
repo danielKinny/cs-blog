@@ -89,16 +89,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </header>
 
-        <article className="bg-white rounded-lg shadow-md p-8 text-black animate-fade-in-delay transform transition-all duration-300 hover:shadow-lg">
+        <article className="bg-white rounded-lg shadow-md p-8 text-black">
           <div className="prose prose-lg max-w-none">
             <div dangerouslySetInnerHTML={{ __html: formatContent(post.content) }} />
           </div>
         </article>
 
-        <footer className="mt-12 pt-8 border-t border-gray-200 animate-fade-in">
+        <footer className="mt-12 pt-8 border-t border-gray-200">
           <Link 
             href="/blog" 
-            className="inline-flex items-center gap-2 text-black hover:text-gray-700 transition-all duration-200 hover:translate-x-1"
+            className="inline-flex items-center gap-2 text-black hover:text-gray-700"
           >
             ← Back to all posts
           </Link>

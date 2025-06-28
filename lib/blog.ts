@@ -1,6 +1,5 @@
 import { BlogPost } from '@/types/blog';
 
-// Sample blog posts data - in a real app, this would come from a CMS, markdown files, or database
 const samplePosts: BlogPost[] = [
   {
     slug: 'getting-started-with-algorithms',
