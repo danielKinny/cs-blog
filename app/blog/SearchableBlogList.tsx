@@ -25,7 +25,8 @@ export default function SearchableBlogList({ posts }: SearchableBlogListProps) {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search blog posts by name or tag..."
-          className="w-full text-blue-900 mx-auto mb-8 px-4 py-2 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white transform transition-all duration-300 hover:scale-105 focus:scale-105"
+          className="w-full mx-auto mb-8 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700 bg-white transform transition-all duration-300 hover:scale-105 focus:scale-105"
+          style={{color: '#7a2531', borderColor: '#e8d8da'}}
         />
       </div>
 
@@ -33,21 +34,22 @@ export default function SearchableBlogList({ posts }: SearchableBlogListProps) {
         {filteredPosts.map((post, index) => (
           <article
             key={post.slug}
-            className="bg-white rounded-lg shadow-lg border border-blue-100 p-6 hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:scale-105 animate-slide-in-left opacity-0"
+            className="bg-white rounded-lg shadow-lg border p-6 hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-slide-in-left opacity-0"
             style={{
               animationDelay: `${index * 0.1}s`,
-              animationFillMode: 'forwards'
+              animationFillMode: 'forwards',
+              borderColor: '#e8d8da'
             }}
           >
             <Link href={`/blog/${post.slug}`} className="block">
-              <h2 className="text-2xl font-semibold text-blue-900 mb-3 hover:text-blue-700 transition-colors duration-200">
+              <h2 className="text-2xl font-semibold mb-3 hover:opacity-80 transition-colors duration-200" style={{color: '#7a2531'}}>
                 {post.title}
               </h2>
-              <p className="text-blue-800 mb-4 line-clamp-3 transition-opacity duration-200 hover:opacity-80">
+              <p className="mb-4 line-clamp-3 transition-opacity duration-200 hover:opacity-80" style={{color: '#6b1e2a'}}>
                 {post.excerpt}
               </p>
-              <div className="flex items-center justify-between text-sm text-blue-700">
-                <time dateTime={post.date} className="transition-colors duration-200 hover:text-blue-600">
+              <div className="flex items-center justify-between text-sm" style={{color: '#8b2635'}}>
+                <time dateTime={post.date} className="transition-colors duration-200 hover:opacity-70">
                   {new Date(post.date).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
@@ -58,8 +60,10 @@ export default function SearchableBlogList({ posts }: SearchableBlogListProps) {
                   {post.tags.map((tag, tagIndex) => (
                     <span
                       key={tag}
-                      className="bg-blue-100 text-blue-900 px-2 py-1 rounded-md text-xs transform transition-all duration-200 hover:scale-110 hover:bg-blue-200 animate-fade-in"
+                      className="px-2 py-1 rounded-md text-xs transform transition-all duration-200 hover:scale-110 animate-fade-in"
                       style={{
+                        backgroundColor: '#fef2f2',
+                        color: '#7a2531',
                         animationDelay: `${(index * 0.1) + (tagIndex * 0.05)}s`,
                         animationFillMode: 'forwards'
                       }}
@@ -76,15 +80,15 @@ export default function SearchableBlogList({ posts }: SearchableBlogListProps) {
 
       {filteredPosts.length === 0 && posts.length > 0 && (
         <div className="text-center py-12 animate-fade-in">
-          <p className="text-blue-900 text-lg">No posts found matching "{searchTerm}"</p>
-          <p className="text-blue-700 text-sm mt-2">Try searching with different keywords</p>
+          <p className="text-lg" style={{color: '#7a2531'}}>No posts found matching "{searchTerm}"</p>
+          <p className="text-sm mt-2" style={{color: '#8b2635'}}>Try searching with different keywords</p>
         </div>
       )}
 
       {posts.length === 0 && (
         <div className="text-center py-12 animate-fade-in">
           <div className="animate-pulse-slow">
-            <p className="text-blue-900 text-lg">Loading blog posts...</p>
+            <p className="text-lg" style={{color: '#7a2531'}}>Loading blog posts...</p>
           </div>
         </div>
       )}
