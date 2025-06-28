@@ -85,7 +85,12 @@ export default function SearchableCourseList({ courses }: SearchableCourseListPr
 
       {filteredCourses.length === 0 && courses.length > 0 && (
         <div className="text-center py-12 animate-fade-in">
-          <p className="text-lg" style={{color: '#7a2531'}}>No courses found matching "{searchTerm}"</p>
+          <p className="text-lg" style={{color: '#7a2531'}}>
+            No courses found matching&nbsp;
+            <span style={{wordBreak: 'break-all'}}>
+              {searchTerm.replace(/</g, "&lt;").replace(/>/g, "&gt;")}
+            </span>
+          </p>
           <p className="text-sm mt-2" style={{color: '#8b2635'}}>Try searching with different keywords</p>
         </div>
       )}

@@ -80,7 +80,7 @@ export default function SearchableBlogList({ posts }: SearchableBlogListProps) {
 
       {filteredPosts.length === 0 && posts.length > 0 && (
         <div className="text-center py-12 animate-fade-in">
-          <p className="text-lg" style={{color: '#7a2531'}}>No posts found matching "{searchTerm}"</p>
+          <p className="text-lg" style={{color: '#7a2531'}}>No posts found matching &apos;{searchTerm}&apos;</p>
           <p className="text-sm mt-2" style={{color: '#8b2635'}}>Try searching with different keywords</p>
         </div>
       )}

@@ -10,7 +10,7 @@ export default function NotFound() {
             Blog Post Not Found
           </h2>
           <p className="mb-8" style={{color: '#6b1e2a'}}>
-            Sorry, the blog post you're looking for doesn't exist or has been moved.
+            Sorry, the blog post you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>
         </div>
         

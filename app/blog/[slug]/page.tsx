@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getPostBySlug, getPostSlugs } from '@/lib/blog';
-import { BlogPost } from '@/types/blog';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;

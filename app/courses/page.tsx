@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { getAllCourses } from '@/lib/course';
 import SearchableCourseList from './SearchableCourseList';
 

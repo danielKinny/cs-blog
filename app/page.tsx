@@ -34,7 +34,7 @@ export default function Home() {
           
 
             <div className="grid md:grid-cols-3 gap-8 mt-16">
-              <a className="bg-white p-6 rounded-lg shadow-lg border animate-slide-in-left transform transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{borderColor: '#e8d8da', animationDelay: '0.2s', animationFillMode: 'forwards', opacity: 0}} href="/blog">
+              <Link className="bg-white p-6 rounded-lg shadow-lg border animate-slide-in-left transform transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{borderColor: '#e8d8da', animationDelay: '0.2s', animationFillMode: 'forwards', opacity: 0}} href="/blog">
                 <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 mx-auto transition-all duration-300 hover:scale-110" style={{backgroundColor: '#fef2f2'}}>
                   <svg className="w-6 h-6" style={{color: '#7a2531'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -44,7 +44,7 @@ export default function Home() {
                 <p style={{color: '#6b1e2a'}}>
                   Learn about the latest trends in computer science, programming, and technology through our engaging blog posts.
                 </p>
-              </a>
+              </Link>
 
             <a className="bg-white p-6 rounded-lg shadow-lg border animate-slide-in-left transform transition-all duration-300 hover:scale-105 hover:shadow-xl" style={{borderColor: '#e8d8da', animationDelay: '0.4s', animationFillMode: 'forwards', opacity: 0}} href="/courses">
               <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 mx-auto transition-all duration-300 hover:scale-110" style={{backgroundColor: '#fef9e7'}}>
