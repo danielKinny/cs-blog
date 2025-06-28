@@ -1,4 +1,4 @@
-import { getPostBySlug } from '@/lib/blog';
+import supabase from '@/lib/supabase';
 import { NextRequest } from 'next/server';
 
 interface RouteParams {
@@ -19,7 +19,26 @@ export async function GET(
       );
     }
 
-    const post = await getPostBySlug(slug);
+    const { data: post, error } = await supabase
+      .from('Blog')
+      .select('*')
+      .eq('slug', slug)
+      .single();
+
+    if (error) {
+      if (error.code === 'PGRST116') {
+        return Response.json(
+          { error: 'Blog post not found', success: false },
+          { status: 404 }
+        );
+      }
+      
+      console.error('Supabase error:', error);
+      return Response.json(
+        { error: 'Failed to fetch blog post', success: false },
+        { status: 500 }
+      );
+    }
 
     if (!post) {
       return Response.json(

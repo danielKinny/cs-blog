@@ -1,20 +1,31 @@
-import { getAllPosts } from '@/lib/blog';
+import supabase from '@/lib/supabase';
 
 export async function GET() {
   try {
-    const posts = await getAllPosts();
-    
-    // Extract all unique tags
-    const allTags = posts.reduce((tags: string[], post) => {
-      post.tags.forEach(tag => {
-        if (!tags.includes(tag)) {
-          tags.push(tag);
-        }
-      });
-      return tags;
-    }, []);
 
-    // Sort tags alphabetically
+    const { data: posts, error } = await supabase
+      .from('Blog')
+      .select('tags');
+
+    if (error) {
+      console.error('Supabase error:', error);
+      return Response.json(
+        { error: 'Failed to fetch tags', success: false },
+        { status: 500 }
+      );
+    }
+
+
+    const allTags = posts?.reduce((tags: string[], post: { tags?: string[] }) => {
+      if (post.tags && Array.isArray(post.tags)) {
+        post.tags.forEach((tag: string) => {
+          if (!tags.includes(tag)) {
+            tags.push(tag);
+          }
+        });
+      }
+      return tags;
+    }, []) || [];
     allTags.sort();
 
     return Response.json({

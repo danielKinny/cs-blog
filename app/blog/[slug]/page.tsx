@@ -1,48 +1,72 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getPostBySlug, getPostSlugs } from '@/lib/blog';
+import { BlogPost } from '@/types/blog';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  const slugs = await getPostSlugs();
-  return slugs.map((slug) => ({
-    slug,
-  }));
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3001'}/api/blogs/slugs`);
+    const data = await response.json();
+    
+    if (data.success) {
+      return data.slugs.map((slug: string) => ({
+        slug,
+      }));
+    }
+    return [];
+  } catch (error) {
+    console.error('Error fetching slugs:', error);
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3001'}/api/blogs/${slug}`);
+    const data = await response.json();
 
-  if (!post) {
+    if (data.success && data.post) {
+      return {
+        title: data.post.title,
+        description: data.post.excerpt,
+      };
+    }
+    
+    return {
+      title: 'Post Not Found',
+    };
+  } catch (error) {
+    console.error('Error fetching post metadata:', error);
     return {
       title: 'Post Not Found',
     };
   }
-
-  return {
-    title: post.title,
-    description: post.excerpt,
-  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3001'}/api/blogs/${slug}`);
+    const data = await response.json();
 
-  if (!post) {
-    notFound();
-  }
+    if (!data.success || !data.post) {
+      notFound();
+    }
 
-  return (
-    <div className="min-h-screen" style={{backgroundColor: '#fef2f2'}}>
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <nav className="mb-8 animate-fade-in">
-          <Link 
-            href="/blog" 
+    const post: BlogPost = data.post;
+
+    return (
+      <div className="min-h-screen" style={{backgroundColor: '#fef2f2'}}>
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <nav className="mb-8 animate-fade-in">
+            <Link 
+              href="/blog" 
             className="flex items-center gap-2 transition-all duration-200 hover:translate-x-1"
             style={{color: '#7a2531'}}
           >
@@ -72,7 +96,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
-            {post.tags.map((tag, index) => (
+            {post.tags?.map((tag: string, index: number) => (
               <span
                 key={tag}
                 className="px-3 py-1 rounded-full text-sm transform transition-all duration-200 hover:scale-110 animate-fade-in"
@@ -106,7 +130,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </footer>
       </div>
     </div>
-  );
+    );
+  } catch (error) {
+    console.error('Error fetching blog post:', error);
+    notFound();
+  }
 }
 
 function formatContent(content: string): string {

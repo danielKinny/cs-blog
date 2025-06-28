@@ -1,5 +1,4 @@
 import supabase from '@/lib/supabase';
-import { getAllPosts } from '@/lib/blog';
 import { NextRequest } from 'next/server';
 
 export async function GET(request: NextRequest) {
@@ -9,36 +8,36 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get('search');
     const limit = searchParams.get('limit');
 
-    // If using Supabase, you can implement filtering there
-    // For now, using the existing blog data
-    let posts = await getAllPosts();
+    let query = supabase
+      .from('Blog')
+      .select('*')
+      .order('date', { ascending: false });
 
-    // Filter by tag if provided
     if (tag) {
-      posts = posts.filter(post => 
-        post.tags.some(postTag => postTag.toLowerCase() === tag.toLowerCase())
-      );
+      query = query.contains('tags', [tag]);
     }
-
-    // Filter by search term if provided
     if (search) {
-      const searchTerm = search.toLowerCase();
-      posts = posts.filter(post =>
-        post.title.toLowerCase().includes(searchTerm) ||
-        post.excerpt.toLowerCase().includes(searchTerm) ||
-        post.tags.some(tag => tag.toLowerCase().includes(searchTerm))
-      );
+      query = query.or(`title.ilike.%${search}%,excerpt.ilike.%${search}%,content.ilike.%${search}%`);
     }
 
-    // Limit results if specified
     if (limit) {
       const limitNum = parseInt(limit, 10);
-      posts = posts.slice(0, limitNum);
+      query = query.limit(limitNum);
+    }
+
+    const { data: posts, error } = await query;
+
+    if (error) {
+      console.error('Supabase error:', error);
+      return Response.json(
+        { error: 'Failed to fetch blog posts', success: false },
+        { status: 500 }
+      );
     }
 
     return Response.json({
-      posts,
-      total: posts.length,
+      posts: posts || [],
+      total: posts?.length || 0,
       success: true
     });
 
