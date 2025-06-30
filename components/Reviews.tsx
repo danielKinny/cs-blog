@@ -110,7 +110,7 @@ export default function Reviews() {
                     <div className="flex">{renderStars(review.rating)}</div>
                   </div>
                   <p className="mb-2" style={{color: '#6b1e2a'}}>{review.comment}</p>
-                  <p className="text-sm" style={{color: '#8b2635'}}>{new Date(review.date).toLocaleDateString()}</p>
+                  <p className="text-sm" style={{color: '#8b2635'}}>{(review.date)}</p>
                 </div>
               </div>
             </div>

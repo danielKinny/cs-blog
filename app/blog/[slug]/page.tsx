@@ -1,44 +1,34 @@
-import { notFound } from 'next/navigation';
+"use client";
 import Link from 'next/link';
-import { getPostBySlug, getPostSlugs } from '@/lib/blog';
+import {BlogPost} from '@/types/blog';
+import { useEffect, useState, use } from 'react';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
-  const slugs = await getPostSlugs();
-  return slugs.map((slug) => ({
-    slug,
-  }));
-}
+export default function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = use(params);
+  const [post, setPost] = useState<BlogPost | null>(null);
 
-export async function generateMetadata({ params }: BlogPostPageProps) {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
-
-  if (!post) {
-    return {
-      title: 'Post Not Found',
+  useEffect(() => {
+    const fetchPost = async () => {
+      const res = await fetch(`/api/blog?slug=${slug}`);
+      if (res.ok) {
+        const data = await res.json();
+        setPost(data);
+      } else {
+        console.error('Failed to fetch post:', res.statusText);
+      }
     };
-  }
+    
+    fetchPost();
+  }, [slug]);
 
-  return {
-    title: post.title,
-    description: post.excerpt,
-  };
-}
-
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
-
-  if (!post) {
-    notFound();
-  }
 
   return (
     <div className="min-h-screen" style={{backgroundColor: '#fef2f2'}}>
+      
       <div className="max-w-4xl mx-auto px-4 py-12">
         <nav className="mb-8 animate-fade-in">
           <Link 
@@ -50,29 +40,29 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </Link>
         </nav>        <header className="mb-8 animate-slide-down">
           <h1 className="text-4xl font-bold mb-4" style={{color: '#7a2531'}}>
-            {post.title}
+            {post?.title}
           </h1>
           
           <div className="flex flex-wrap items-center gap-4 text-sm mb-6 animate-slide-up" style={{color: '#6b1e2a'}}>
-            <time dateTime={post.date} className="transition-colors duration-200 hover:opacity-70">
-              {new Date(post.date).toLocaleDateString('en-US', {
+            <time dateTime={post?.date} className="transition-colors duration-200 hover:opacity-70">
+              {post?.date ? new Date(post.date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
-              })}
+              }) : ''}
             </time>
             
-            {post.author && (
+            {post?.author && (
               <span className="transition-colors duration-200 hover:opacity-70">by {post.author}</span>
             )}
             
-            {post.readingTime && (
+            {post?.readingTime && (
               <span className="transition-colors duration-200 hover:opacity-70">{post.readingTime} min read</span>
             )}
           </div>
 
           <div className="flex flex-wrap gap-2 mb-6">
-            {post.tags.map((tag, index) => (
+            {post?.tags.map((tag, index) => (
               <span
                 key={tag}
                 className="px-3 py-1 rounded-full text-sm transform transition-all duration-200 hover:scale-110 animate-fade-in"
@@ -91,7 +81,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         <article className="bg-white rounded-lg shadow-lg border p-8" style={{borderColor: '#e8d8da', color: '#7a2531'}}>
           <div className="prose prose-lg max-w-none">
-            <div dangerouslySetInnerHTML={{ __html: formatContent(post.content) }} />
+            <div dangerouslySetInnerHTML={{ __html: formatContent(post?.content || '') }} />
           </div>
         </article>
 

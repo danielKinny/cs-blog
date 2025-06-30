@@ -2,6 +2,7 @@ import { BlogPost } from '@/types/blog';
 
 const samplePosts: BlogPost[] = [
   {
+    blogID: 1,
     slug: 'getting-started-with-algorithms',
     title: 'Getting Started with Data Structures and Algorithms',
     excerpt: 'A comprehensive guide to understanding the fundamentals of data structures and algorithms, perfect for computer science students and developers looking to strengthen their foundation.',
@@ -50,6 +51,7 @@ Remember, consistency is key. Practice a little bit every day rather than crammi
     readingTime: 5
   },
   {
+    blogID: 2,
     slug: 'understanding-big-o-notation',
     title: 'Understanding Big O Notation: A Complete Guide',
     excerpt: 'Master the concept of algorithmic complexity with this detailed explanation of Big O notation, including examples and practical applications in real-world programming.',
@@ -122,6 +124,7 @@ Remember: premature optimization is the root of all evil, but understanding comp
     readingTime: 7
   },
   {
+    blogID: 3,
     slug: 'introduction-to-react-hooks',
     title: 'Modern React Development with Hooks',
     excerpt: 'Explore the power of React Hooks and how they revolutionized React development. Learn useState, useEffect, and custom hooks with practical examples.',

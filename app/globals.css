@@ -86,7 +86,6 @@ body {
   }
 }
 
-/* Animation Classes */
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
 }
@@ -109,17 +108,25 @@ body {
   animation: slide-in-left 0.6s ease-out forwards;
 }
 
+.animate-slide-in-left {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-slide-in-left {
+    opacity: 0;
+  }
+}
+
 .animate-pulse-slow {
   animation: pulse-slow 2s ease-in-out infinite;
 }
 
-/* Smooth transitions for interactive elements */
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Custom hover effects */
 .hover-lift:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
