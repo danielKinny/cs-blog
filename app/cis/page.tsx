@@ -87,70 +87,70 @@ const Page = () => {
           </div>
         </section>
 
-        <section className='mb-16 animate-fade-in-delay text-white'>
+        <section className='mb-16 animate-fade-in-delay'>
           <h2 className='text-3xl font-semibold text-[#7a2531] mb-8 text-center'>IGCSE Computer Science vs Information Technology</h2>
           <div className='grid md:grid-cols-2 gap-8'>
-            <div className='bg-gradient-to-br bg-red-800 rounded-lg p-8 hover-lift transition-all duration-300 transform hover:scale-105 border border-[#e8d8da]'>
-              <h3 className='text-2xl font-semibold mb-6'>IGCSE Computer Science</h3>
+            <div className='bg-gradient-to-br from-[#7a2531] to-[#6b1e2a] rounded-lg p-8 hover-lift transition-all duration-300 transform hover:scale-105 border-2 border-[#7a2531] shadow-xl'>
+              <h3 className='text-2xl font-semibold text-white mb-6'>IGCSE Computer Science</h3>
               <div className='mb-6'>
-                <h4 className='text-lg font-semibold text-[#7a2531] mb-3'>What You&apos;ll Study:</h4>
+                <h4 className='text-lg font-semibold text-white mb-3'>What You&apos;ll Study:</h4>
                 <div className='space-y-3'>
                   <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-[#7a2531] rounded-full mt-2'></div>
-                    <p className='text-[#6b1e2a]'>Programming fundamentals (Python/Pseudocode)</p>
+                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
+                    <p className='text-red-100'>Programming fundamentals (Python/Pseudocode)</p>
                   </div>
                   <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-[#7a2531] rounded-full mt-2'></div>
-                    <p className='text-[#6b1e2a]'>Algorithms and computational thinking</p>
+                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
+                    <p className='text-red-100'>Algorithms and computational thinking</p>
                   </div>
                   <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-[#7a2531] rounded-full mt-2'></div>
-                    <p className='text-[#6b1e2a]'>Data representation and number systems</p>
+                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
+                    <p className='text-red-100'>Data representation and number systems</p>
                   </div>
                   <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-[#7a2531] rounded-full mt-2'></div>
-                    <p className='text-[#6b1e2a]'>Computer systems and architecture</p>
+                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
+                    <p className='text-red-100'>Computer systems and architecture</p>
                   </div>
                   <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-[#7a2531] rounded-full mt-2'></div>
-                    <p className='text-[#6b1e2a]'>Networks and cybersecurity</p>
+                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
+                    <p className='text-red-100'>Networks and cybersecurity</p>
                   </div>
                 </div>
               </div>
-              <div className='bg-[#fce7e7] bg-opacity-50 rounded-lg p-4'>
+              <div className='bg-white bg-opacity-90 rounded-lg p-4 border border-white border-opacity-50 shadow-inner'>
                 <h4 className='text-lg font-semibold text-[#7a2531] mb-2'>Best For:</h4>
                 <p className='text-[#6b1e2a] text-sm'>Students interested in programming, software development, and understanding how computers work at a fundamental level.</p>
               </div>
             </div>
 
-            <div className='bg-gradient-to-br from-[#fef9e7] to-[#fef3c7] rounded-lg p-8 hover-lift transition-all duration-300 transform hover:scale-105 border border-[#e8d8da]'>
-              <h3 className='text-2xl font-semibold text-[#7a2531] mb-6'>IGCSE Information Technology</h3>
+            <div className='bg-gradient-to-br from-[#d4af37] to-[#b8941f] rounded-lg p-8 hover-lift transition-all duration-300 transform hover:scale-105 border-2 border-[#d4af37] shadow-xl'>
+              <h3 className='text-2xl font-semibold text-white mb-6'>IGCSE Information Technology</h3>
               <div className='mb-6'>
-                <h4 className='text-lg font-semibold text-[#7a2531] mb-3'>What You&apos;ll Study:</h4>
+                <h4 className='text-lg font-semibold text-white mb-3'>What You&apos;ll Study:</h4>
                 <div className='space-y-3'>
                   <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-[#d4af37] rounded-full mt-2'></div>
-                    <p className='text-[#6b1e2a]'>Document production and data management</p>
+                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
+                    <p className='text-yellow-100'>Document production and data management</p>
                   </div>
                   <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-[#d4af37] rounded-full mt-2'></div>
-                    <p className='text-[#6b1e2a]'>Website authoring and multimedia</p>
+                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
+                    <p className='text-yellow-100'>Website authoring and multimedia</p>
                   </div>
                   <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-[#d4af37] rounded-full mt-2'></div>
-                    <p className='text-[#6b1e2a]'>Data analysis and modeling</p>
+                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
+                    <p className='text-yellow-100'>Data analysis and modeling</p>
                   </div>
                   <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-[#d4af37] rounded-full mt-2'></div>
-                    <p className='text-[#6b1e2a]'>Database design and implementation</p>
+                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
+                    <p className='text-yellow-100'>Database design and implementation</p>
                   </div>
                   <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-[#d4af37] rounded-full mt-2'></div>
-                    <p className='text-[#6b1e2a]'>System life cycle and project management</p>
+                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
+                    <p className='text-yellow-100'>System life cycle and project management</p>
                   </div>
                 </div>
               </div>
-              <div className='bg-[#fef3c7] bg-opacity-50 rounded-lg p-4'>
+              <div className='bg-white bg-opacity-90 rounded-lg p-4 border border-white border-opacity-50 shadow-inner'>
                 <h4 className='text-lg font-semibold text-[#7a2531] mb-2'>Best For:</h4>
                 <p className='text-[#6b1e2a] text-sm'>Students interested in practical technology applications, digital media, and using technology to solve business problems.</p>
               </div>
