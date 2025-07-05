@@ -90,7 +90,7 @@ export default function Home() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-12 w-full">
-                {/* Riddhiman's Profile */}
+
                 <div className="flex flex-col items-center text-center space-y-6">
                   <div className="flex-shrink-0 relative">
                     <div className="absolute -inset-4 bg-gradient-to-r from-[#7a2531] via-[#d4af37] to-[#c14242] rounded-full opacity-20 blur-xl"></div>
@@ -108,13 +108,13 @@ export default function Home() {
                   <div className="text-[#6b1e2a] space-y-4 text-lg leading-relaxed">
                     <h3 className="text-2xl font-bold text-[#7a2531]">Riddhiman Premkumar</h3>
                     <p>
-                      Hi, I'm <span className="text-[#7a2531] font-bold text-xl">Riddhiman Premkumar</span>—a 17-year-old football-loving, tech-building student from CIS who somehow decided that juggling school, side projects, and future ambitions was a fun idea. I'm the founder of this initiative, built for students who are navigating the chaos of college applications, academic life, and trying to figure out what on earth <em>"career-ready skills"</em> even mean.
+                      Hi, I&apos;m <span className="text-[#7a2531] font-bold text-xl">Riddhiman Premkumar</span>—a 17-year-old football-loving, tech-building student from CIS who somehow decided that juggling school, side projects, and future ambitions was a fun idea. I&apos;m the founder of this initiative, built for students who are navigating the chaos of college applications, academic life, and trying to figure out what on earth <em>&apos;career-ready skills&apos;</em> even mean.
                     </p>
                     <p>
-                      I've always loved helping others—whether it's helping a person in need, explaining a tricky concept or brainstorming big ideas at 2 AM that I swear could be the next billion-dollar startup. My dream? To launch my own tech company one day—and maybe <span className="text-[#d4af37] font-semibold">change the world</span> while I'm at it.
+                      I&apos;ve always loved helping others—whether it&apos;s helping a person in need, explaining a tricky concept or brainstorming big ideas at 2 AM that I swear could be the next billion-dollar startup. My dream? To launch my own tech company one day—and maybe <span className="text-[#d4af37] font-semibold">change the world</span> while I&apos;m at it.
                     </p>
                     <p>
-                      But until then, I'm starting here—empowering students like you to <span className="text-[#c14242] font-semibold">dream bigger</span>, <span className="text-[#7a2531] font-semibold">learn smarter</span>, and <span className="text-[#d4af37] font-semibold">take charge of your future</span>. Because success shouldn't be a secret—and together, we're unlocking it.
+                      But until then, I&apos;m starting here—empowering students like you to <span className="text-[#c14242] font-semibold">dream bigger</span>, <span className="text-[#7a2531] font-semibold">learn smarter</span>, and <span className="text-[#d4af37] font-semibold">take charge of your future</span>. Because success shouldn&apos;t be a secret—and together, we&apos;re unlocking it.
                     </p>
                   </div>
                 </div>
@@ -136,13 +136,13 @@ export default function Home() {
                   <div className="text-[#6b1e2a] space-y-4 text-lg leading-relaxed">
                     <h3 className="text-2xl font-bold text-[#7a2531]">Daniel Kinny</h3>
                     <p>
-                      Hey, I'm <span className="text-[#7a2531] font-bold text-xl">Daniel Kinny</span> — a 17-year-old student currently studying at CIS. I've always been drawn to computers and how they work. Over time, that interest has grown into a real passion for software engineering and computer science. I enjoy exploring how digital tools are built, breaking things down to see how they tick, and using that knowledge to create things of my own.
+                      Hey, I&apos;m <span className="text-[#7a2531] font-bold text-xl">Daniel Kinny</span> — a 17-year-old student currently studying at CIS. I&apos;ve always been drawn to computers and how they work. Over time, that interest has grown into a real passion for software engineering and computer science. I enjoy exploring how digital tools are built, breaking things down to see how they tick, and using that knowledge to create things of my own.
                     </p>
                     <p>
-                      I'm the kind of person who's always curious — whether it's learning a new coding language, experimenting with a project, or diving into something I've never tried before. I love the challenge of <span className="text-[#c14242] font-semibold">solving problems with tech</span> and making things that actually help people.
+                      I&apos;m the kind of person who&apos;s always curious — whether it&apos;s learning a new coding language, experimenting with a project, or diving into something I&apos;ve never tried before. I love the challenge of <span className="text-[#c14242] font-semibold">solving problems with tech</span> and making things that actually help people.
                     </p>
                     <p>
-                      These days, I'm spending my time sharpening my skills, building personal projects, and figuring out how I can use what I know to make a difference. I'm especially interested in things like <span className="text-[#d4af37] font-semibold">AI</span>, <span className="text-[#7a2531] font-semibold">the web</span>, and <span className="text-[#c14242] font-semibold">user-focused design</span>. One day, I hope to be part of a team that's pushing technology forward in meaningful ways.
+                      These days, I&apos;m spending my time sharpening my skills, building personal projects, and figuring out how I can use what I know to make a difference. I&apos;m especially interested in things like <span className="text-[#d4af37] font-semibold">AI</span>, <span className="text-[#7a2531] font-semibold">the web</span>, and <span className="text-[#c14242] font-semibold">user-focused design</span>. One day, I hope to be part of a team that&apos;s pushing technology forward in meaningful ways.
                     </p>
                   </div>
                 </div>
