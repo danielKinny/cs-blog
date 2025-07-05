@@ -8,7 +8,7 @@ export default function Home() {
       <div className="max-w-4xl mx-auto px-4 py-16">
         <div className="text-center">
           <h1 className="text-5xl font-bold mb-6 animate-slide-down text-[#7a2531]">
-            Welcome to Beyond the Syllabus
+            Welcome To Beyond The Syllabus
           </h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto animate-slide-up text-[#6b1e2a]">
             Your go-to resource for computer science concepts, programming tutorials, 
@@ -111,7 +111,7 @@ export default function Home() {
                       Hi, I&apos;m <span className="text-[#7a2531] font-bold text-xl">Riddhiman Premkumar</span>—a 17-year-old football-loving, tech-building student from CIS who somehow decided that juggling school, side projects, and future ambitions was a fun idea. I&apos;m the founder of this initiative, built for students who are navigating the chaos of college applications, academic life, and trying to figure out what on earth <em>&apos;career-ready skills&apos;</em> even mean.
                     </p>
                     <p>
-                      I&apos;ve always loved helping others—whether it&apos;s helping a person in need, explaining a tricky concept or brainstorming big ideas at 2 AM that I swear could be the next billion-dollar startup. My dream? To launch my own tech company one day—and maybe <span className="text-[#d4af37] font-semibold">change the world</span> while I&apos;m at it.
+                      Daniel is gay.
                     </p>
                     <p>
                       But until then, I&apos;m starting here—empowering students like you to <span className="text-[#c14242] font-semibold">dream bigger</span>, <span className="text-[#7a2531] font-semibold">learn smarter</span>, and <span className="text-[#d4af37] font-semibold">take charge of your future</span>. Because success shouldn&apos;t be a secret—and together, we&apos;re unlocking it.
