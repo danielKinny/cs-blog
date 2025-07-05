@@ -111,7 +111,7 @@ export default function Home() {
                       Hi, I&apos;m <span className="text-[#7a2531] font-bold text-xl">Riddhiman Premkumar</span>—a 17-year-old football-loving, tech-building student from CIS who somehow decided that juggling school, side projects, and future ambitions was a fun idea. I&apos;m the founder of this initiative, built for students who are navigating the chaos of college applications, academic life, and trying to figure out what on earth <em>&apos;career-ready skills&apos;</em> even mean.
                     </p>
                     <p>
-                      Daniel is gay.
+                      Daniel is the goat
                     </p>
                     <p>
                       But until then, I&apos;m starting here—empowering students like you to <span className="text-[#c14242] font-semibold">dream bigger</span>, <span className="text-[#7a2531] font-semibold">learn smarter</span>, and <span className="text-[#d4af37] font-semibold">take charge of your future</span>. Because success shouldn&apos;t be a secret—and together, we&apos;re unlocking it.
@@ -124,7 +124,7 @@ export default function Home() {
                     <div className="absolute -inset-4 bg-gradient-to-r from-[#c14242] via-[#7a2531] to-[#d4af37] rounded-full opacity-20 blur-xl"></div>
                     <div className="relative bg-gradient-to-br from-[#c14242]/10 to-[#7a2531]/10 rounded-full p-4">
                       <Image
-                        src="/danny.jpeg"
+                        src="/danny.JPG"
                         alt="Daniel Kinny"
                         width={200}
                         height={200}
