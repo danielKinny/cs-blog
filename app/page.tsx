@@ -111,10 +111,16 @@ export default function Home() {
                       Hi, I&apos;m <span className="text-[#7a2531] font-bold text-xl">Riddhiman Premkumar</span>—a 17-year-old football-loving, tech-building student from CIS who somehow decided that juggling school, side projects, and future ambitions was a fun idea. I&apos;m the founder of this initiative, built for students who are navigating the chaos of college applications, academic life, and trying to figure out what on earth <em>&apos;career-ready skills&apos;</em> even mean.
                     </p>
                     <p>
-                      Daniel is the goat
+                      I&apos;m also someone who&apos;s deeply passionate about creating things that are both fun and impactful. Whether it&apos;s building quirky personal projects, exploring how complex systems work, or diving into how AI powers the tools we use every day, I love uncovering the “how” behind the “wow.”
+
+In my free time, you&apos;ll often find me experimenting with LLMs to build smart AI models, or working with Arduino and NodeMCU to bring my ideas into the physical world through hardware. I enjoy picking up new skills, solving real-world problems, and most of all — learning by building.
+
+I believe in using technology as a force for good and one that can benefit others.
+
+I&apos;m always exploring, always building, and always excited about what&apos;s next.
                     </p>
                     <p>
-                      But until then, I&apos;m starting here—empowering students like you to <span className="text-[#c14242] font-semibold">dream bigger</span>, <span className="text-[#7a2531] font-semibold">learn smarter</span>, and <span className="text-[#d4af37] font-semibold">take charge of your future</span>. Because success shouldn&apos;t be a secret—and together, we&apos;re unlocking it.
+                      So with that being said, I&apos;m starting here—empowering students like you to <span className="text-[#c14242] font-semibold">dream bigger</span>, <span className="text-[#7a2531] font-semibold">learn smarter</span>, and <span className="text-[#d4af37] font-semibold">take charge of your future</span>. Because success shouldn&apos;t be a secret—and together, we&apos;re unlocking it.
                     </p>
                   </div>
                 </div>
