@@ -11,61 +11,109 @@ export default function Home() {
             Welcome To Beyond The Syllabus
           </h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto animate-slide-up text-[#6b1e2a]">
-            Your go-to resource for computer science concepts, programming tutorials, 
-            and insights into the world of technology. From algorithms to web development, 
-            we cover it all.
+            Your go-to resource for computer science concepts, programming
+            tutorials, and insights into the world of technology. From
+            algorithms to web development, we cover it all.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-delay">
-            <Link 
-              href="/blog" 
+            <Link
+              href="/blog"
               className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg bg-[#7a2531]"
             >
               Read the Blog
             </Link>
-            <Link 
-              href="/blog/getting-started-with-algorithms" 
+            <Link
+              href="/blog/getting-started-with-algorithms"
               className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg bg-[#d4af37]"
             >
               Start Learning
             </Link>
           </div>
-          
 
-            <div className="grid md:grid-cols-3 gap-8 mt-16">
-              <Link className="bg-white p-6 rounded-lg shadow-lg border border-[#e8d8da] animate-slide-in-left transform transition-all duration-300 hover:scale-105 hover:shadow-xl [animation-delay:0.2s] [animation-fill-mode:forwards]" href="/blog">
-                <div className="w-12 h-12 rounded-lg bg-[#fef2f2] flex items-center justify-center mb-4 mx-auto transition-all duration-300 hover:scale-110">
-                  <svg className="w-6 h-6 text-[#7a2531]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-[#7a2531]">Dive into interesting articles</h3>
-                <p className="text-[#6b1e2a]">
-                  Learn about the latest trends in computer science, programming, and technology through our engaging blog posts.
-                </p>
-              </Link>
-
-            <Link className="bg-white p-6 rounded-lg shadow-lg border border-[#e8d8da] animate-slide-in-left transform transition-all duration-300 hover:scale-105 hover:shadow-xl [animation-delay:0.4s] [animation-fill-mode:forwards]" href="/courses">
-              <div className="w-12 h-12 rounded-lg bg-[#fef9e7] flex items-center justify-center mb-4 mx-auto transition-all duration-300 hover:scale-110">
-                <svg className="w-6 h-6 text-[#d4af37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          <div className="grid md:grid-cols-3 gap-8 mt-16">
+            <Link
+              className="bg-white p-6 rounded-lg shadow-lg border border-[#e8d8da] animate-slide-in-left transform transition-all duration-300 hover:scale-105 hover:shadow-xl [animation-delay:0.2s] [animation-fill-mode:forwards]"
+              href="/blog"
+            >
+              <div className="w-12 h-12 rounded-lg bg-[#fef2f2] flex items-center justify-center mb-4 mx-auto transition-all duration-300 hover:scale-110">
+                <svg
+                  className="w-6 h-6 text-[#7a2531]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#7a2531]">Explore Recommended Courses</h3>
+              <h3 className="text-xl font-semibold mb-3 text-[#7a2531]">
+                Dive into interesting articles
+              </h3>
               <p className="text-[#6b1e2a]">
-                Discover curated courses from industry-leading platforms to advance your skills in programming, cybersecurity, data science, and more.
+                Learn about the latest trends in computer science, programming,
+                and technology through our engaging blog posts.
               </p>
             </Link>
 
-            <Link className="bg-white p-6 rounded-lg shadow-lg border border-[#e8d8da] animate-slide-in-left transform transition-all duration-300 hover:scale-105 hover:shadow-xl [animation-delay:0.6s] [animation-fill-mode:forwards]" href="/cis">
-              <div className="w-12 h-12 rounded-lg bg-[#fef2f2] flex items-center justify-center mb-4 mx-auto transition-all duration-300 hover:scale-110">
-                <svg className="w-6 h-6 text-[#c14242]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            <Link
+              className="bg-white p-6 rounded-lg shadow-lg border border-[#e8d8da] animate-slide-in-left transform transition-all duration-300 hover:scale-105 hover:shadow-xl [animation-delay:0.4s] [animation-fill-mode:forwards]"
+              href="/courses"
+            >
+              <div className="w-12 h-12 rounded-lg bg-[#fef9e7] flex items-center justify-center mb-4 mx-auto transition-all duration-300 hover:scale-110">
+                <svg
+                  className="w-6 h-6 text-[#d4af37]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#7a2531]">Explore the courses that CIS offers</h3>
+              <h3 className="text-xl font-semibold mb-3 text-[#7a2531]">
+                Explore Recommended Courses
+              </h3>
               <p className="text-[#6b1e2a]">
-                Discover the subjects you can choose during your IGCSEs and A-Levels that can help launch your career into Computer Science.
+                Discover curated courses from industry-leading platforms to
+                advance your skills in programming, cybersecurity, data science,
+                and more.
+              </p>
+            </Link>
+
+            <Link
+              className="bg-white p-6 rounded-lg shadow-lg border border-[#e8d8da] animate-slide-in-left transform transition-all duration-300 hover:scale-105 hover:shadow-xl [animation-delay:0.6s] [animation-fill-mode:forwards]"
+              href="/cis"
+            >
+              <div className="w-12 h-12 rounded-lg bg-[#fef2f2] flex items-center justify-center mb-4 mx-auto transition-all duration-300 hover:scale-110">
+                <svg
+                  className="w-6 h-6 text-[#c14242]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-[#7a2531]">
+                Explore the courses that CIS offers
+              </h3>
+              <p className="text-[#6b1e2a]">
+                Discover the subjects you can choose during your IGCSEs and
+                A-Levels that can help launch your career into Computer Science.
               </p>
             </Link>
           </div>
@@ -76,11 +124,11 @@ export default function Home() {
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-[#7a2531]/5 to-[#d4af37]/5 rounded-3xl transform rotate-1"></div>
           <div className="absolute inset-0 bg-gradient-to-l from-[#c14242]/5 to-transparent rounded-3xl transform -rotate-1"></div>
-          
+
           <div className="relative bg-white rounded-3xl shadow-2xl border border-[#e8d8da] p-10 md:p-12 mb-8 overflow-hidden">
             <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-[#7a2531]/10 to-transparent rounded-br-3xl"></div>
             <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-[#d4af37]/10 to-transparent rounded-tl-3xl"></div>
-            
+
             <div className="flex flex-col items-center gap-12">
               <div className="relative mb-6">
                 <h2 className="text-4xl md:text-5xl font-bold text-[#7a2531] mb-2 text-center">
@@ -90,7 +138,6 @@ export default function Home() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-12 w-full">
-
                 <div className="flex flex-col items-center text-center space-y-6">
                   <div className="flex-shrink-0 relative">
                     <div className="absolute -inset-4 bg-gradient-to-r from-[#7a2531] via-[#d4af37] to-[#c14242] rounded-full opacity-20 blur-xl"></div>
@@ -104,23 +151,56 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="text-[#6b1e2a] space-y-4 text-lg leading-relaxed">
-                    <h3 className="text-2xl font-bold text-[#7a2531]">Riddhiman Premkumar</h3>
+                    <h3 className="text-2xl font-bold text-[#7a2531]">
+                      Riddhiman Premkumar
+                    </h3>
                     <p>
-                      Hi, I&apos;m <span className="text-[#7a2531] font-bold text-xl">Riddhiman Premkumar</span>—a 17-year-old football-loving, tech-building student from CIS who somehow decided that juggling school, side projects, and future ambitions was a fun idea. I&apos;m the founder of this initiative, built for students who are navigating the chaos of college applications, academic life, and trying to figure out what on earth <em>&apos;career-ready skills&apos;</em> even mean.
+                      Hi, I&apos;m{" "}
+                      <span className="text-[#7a2531] font-bold text-xl">
+                        Riddhiman Premkumar
+                      </span>
+                      —a 17-year-old football-loving, tech-building student from
+                      CIS who somehow decided that juggling school, side
+                      projects, and future ambitions was a fun idea. I&apos;m
+                      the founder of this initiative, built for students who are
+                      navigating the chaos of college applications, academic
+                      life, and trying to figure out what on earth{" "}
+                      <em>&apos;career-ready skills&apos;</em> even mean.
                     </p>
                     <p>
-                      I&apos;m also someone who&apos;s deeply passionate about creating things that are both fun and impactful. Whether it&apos;s building quirky personal projects, exploring how complex systems work, or diving into how AI powers the tools we use every day, I love uncovering the “how” behind the “wow.”
-
-In my free time, you&apos;ll often find me experimenting with LLMs to build smart AI models, or working with Arduino and NodeMCU to bring my ideas into the physical world through hardware. I enjoy picking up new skills, solving real-world problems, and most of all — learning by building.
-
-I believe in using technology as a force for good and one that can benefit others.
-
-I&apos;m always exploring, always building, and always excited about what&apos;s next.
+                      I&apos;m also someone who&apos;s deeply passionate about
+                      creating things that are both fun and impactful. Whether
+                      it&apos;s building quirky personal projects, exploring how
+                      complex systems work, or diving into how AI powers the
+                      tools we use every day, I love uncovering the “how” behind
+                      the “wow.” In my free time, you&apos;ll often find me
+                      experimenting with LLMs to build smart AI models, or
+                      working with Arduino and NodeMCU to bring my ideas into
+                      the physical world through hardware. I enjoy picking up
+                      new skills, solving real-world problems, and most of all —
+                      learning by building. I believe in using technology as a
+                      force for good and one that can benefit others. I&apos;m
+                      always exploring, always building, and always excited
+                      about what&apos;s next.
                     </p>
                     <p>
-                      So with that being said, I&apos;m starting here—empowering students like you to <span className="text-[#c14242] font-semibold">dream bigger</span>, <span className="text-[#7a2531] font-semibold">learn smarter</span>, and <span className="text-[#d4af37] font-semibold">take charge of your future</span>. Because success shouldn&apos;t be a secret—and together, we&apos;re unlocking it.
+                      So with that being said, I&apos;m starting here—empowering
+                      students like you to{" "}
+                      <span className="text-[#c14242] font-semibold">
+                        dream bigger
+                      </span>
+                      ,{" "}
+                      <span className="text-[#7a2531] font-semibold">
+                        learn smarter
+                      </span>
+                      , and{" "}
+                      <span className="text-[#d4af37] font-semibold">
+                        take charge of your future
+                      </span>
+                      . Because success shouldn&apos;t be a secret—and together,
+                      we&apos;re unlocking it.
                     </p>
                   </div>
                 </div>
@@ -138,17 +218,49 @@ I&apos;m always exploring, always building, and always excited about what&apos;s
                       />
                     </div>
                   </div>
-                  
+
                   <div className="text-[#6b1e2a] space-y-4 text-lg leading-relaxed">
-                    <h3 className="text-2xl font-bold text-[#7a2531]">Daniel Kinny</h3>
+                    <h3 className="text-2xl font-bold text-[#7a2531]">
+                      Daniel Kinny
+                    </h3>
                     <p>
-                      Hey, I&apos;m <span className="text-[#7a2531] font-bold text-xl">Daniel Kinny</span> — a 17-year-old student currently studying at CIS. I&apos;ve always been drawn to computers and how they work. Over time, that interest has grown into a real passion for software engineering and computer science. I enjoy exploring how digital tools are built, breaking things down to see how they tick, and using that knowledge to create things of my own.
+                      Hey, I&apos;m{" "}
+                      <span className="text-[#7a2531] font-bold text-xl">
+                        Daniel Kinny
+                      </span>{" "}
+                      — a 17-year-old student currently studying at CIS.
+                      I&apos;ve always been drawn to computers and how they
+                      work. Over time, that interest has grown into a real
+                      passion for software engineering and computer science. I
+                      enjoy exploring how digital tools are built, breaking
+                      things down to see how they tick, and using that knowledge
+                      to create things of my own.
                     </p>
                     <p>
-                      I&apos;m the kind of person who&apos;s always curious — whether it&apos;s learning a new coding language, experimenting with a project, or diving into something I&apos;ve never tried before. I love the challenge of <span className="text-[#c14242] font-semibold">solving problems with tech</span> and making things that actually help people.
+                      I&apos;m the kind of person who&apos;s always curious —
+                      whether it&apos;s learning a new coding language,
+                      experimenting with a project, or diving into something
+                      I&apos;ve never tried before. I love the challenge of{" "}
+                      <span className="text-[#c14242] font-semibold">
+                        solving problems with tech
+                      </span>{" "}
+                      and making things that actually help people.
                     </p>
                     <p>
-                      These days, I&apos;m spending my time sharpening my skills, building personal projects, and figuring out how I can use what I know to make a difference. I&apos;m especially interested in things like <span className="text-[#d4af37] font-semibold">AI</span>, <span className="text-[#7a2531] font-semibold">the web</span>, and <span className="text-[#c14242] font-semibold">user-focused design</span>. One day, I hope to be part of a team that&apos;s pushing technology forward in meaningful ways.
+                      These days, I&apos;m spending my time sharpening my
+                      skills, building personal projects, and figuring out how I
+                      can use what I know to make a difference. I&apos;m
+                      especially interested in things like{" "}
+                      <span className="text-[#d4af37] font-semibold">AI</span>,{" "}
+                      <span className="text-[#7a2531] font-semibold">
+                        the web
+                      </span>
+                      , and{" "}
+                      <span className="text-[#c14242] font-semibold">
+                        user-focused design
+                      </span>
+                      . One day, I hope to be part of a team that&apos;s pushing
+                      technology forward in meaningful ways.
                     </p>
                   </div>
                 </div>
@@ -159,7 +271,6 @@ I&apos;m always exploring, always building, and always excited about what&apos;s
       </div>
 
       <Reviews />
-
     </div>
   );
 }
