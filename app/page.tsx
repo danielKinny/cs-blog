@@ -1,276 +1,491 @@
+"use client";
+import DecryptedText from "@/components/DecryptedText/DecryptedText";
+import Silk from "@/components/Silk/Silk";
+import SplitText  from "@/components/SplitText/SplitText";
 import Link from "next/link";
-import Reviews from "@/components/Reviews";
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-red-100">
-      <div className="max-w-4xl mx-auto px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-5xl font-bold mb-6 animate-slide-down text-[#7a2531]">
-            Welcome To Beyond The Syllabus
-          </h1>
-          <p className="text-xl mb-8 max-w-2xl mx-auto animate-slide-up text-[#6b1e2a]">
-            Your go-to resource for computer science concepts, programming
-            tutorials, and insights into the world of technology. From
-            algorithms to web development, we cover it all.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-delay">
-            <Link
-              href="/blog"
-              className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg bg-[#7a2531]"
-            >
-              Read the Blog
-            </Link>
-            <Link
-              href="/blog/getting-started-with-algorithms"
-              className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg bg-[#d4af37]"
-            >
-              Start Learning
-            </Link>
+    <div className="min-h-screen">
+      <div
+        className="text-7xl font-extrabold text-center text-red-700 flex items-center justify-center min-h-screen bg-white bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url(/computer.jpg)" }}
+      >
+        <div className="text-white">
+          <div className="bg-[#7a2531] p-6 drop-shadow-xl rounded-lg backdrop-blur-sm">
+            <DecryptedText
+              text={"BEYOND THE SYLLABUS"}
+              animateOn="view"
+              speed={50}
+              revealDirection="center"
+              sequential={true}
+            />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-16">
-            <Link
-              className="bg-white p-6 rounded-lg shadow-lg border border-[#e8d8da] animate-slide-in-left transform transition-all duration-300 hover:scale-105 hover:shadow-xl [animation-delay:0.2s] [animation-fill-mode:forwards]"
-              href="/blog"
-            >
-              <div className="w-12 h-12 rounded-lg bg-[#fef2f2] flex items-center justify-center mb-4 mx-auto transition-all duration-300 hover:scale-110">
-                <svg
-                  className="w-6 h-6 text-[#7a2531]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#7a2531]">
-                Dive into interesting articles
-              </h3>
-              <p className="text-[#6b1e2a]">
-                Learn about the latest trends in computer science, programming,
-                and technology through our engaging blog posts.
-              </p>
-            </Link>
-
-            <Link
-              className="bg-white p-6 rounded-lg shadow-lg border border-[#e8d8da] animate-slide-in-left transform transition-all duration-300 hover:scale-105 hover:shadow-xl [animation-delay:0.4s] [animation-fill-mode:forwards]"
-              href="/courses"
-            >
-              <div className="w-12 h-12 rounded-lg bg-[#fef9e7] flex items-center justify-center mb-4 mx-auto transition-all duration-300 hover:scale-110">
-                <svg
-                  className="w-6 h-6 text-[#d4af37]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#7a2531]">
-                Explore Recommended Courses
-              </h3>
-              <p className="text-[#6b1e2a]">
-                Discover curated courses from industry-leading platforms to
-                advance your skills in programming, cybersecurity, data science,
-                and more.
-              </p>
-            </Link>
-
-            <Link
-              className="bg-white p-6 rounded-lg shadow-lg border border-[#e8d8da] animate-slide-in-left transform transition-all duration-300 hover:scale-105 hover:shadow-xl [animation-delay:0.6s] [animation-fill-mode:forwards]"
-              href="/cis"
-            >
-              <div className="w-12 h-12 rounded-lg bg-[#fef2f2] flex items-center justify-center mb-4 mx-auto transition-all duration-300 hover:scale-110">
-                <svg
-                  className="w-6 h-6 text-[#c14242]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-[#7a2531]">
-                Explore the courses that CIS offers
-              </h3>
-              <p className="text-[#6b1e2a]">
-                Discover the subjects you can choose during your IGCSEs and
-                A-Levels that can help launch your career into Computer Science.
-              </p>
-            </Link>
+          <div className="text-xl mt-2 bg-[#7a2531] p-2 drop-shadow-xl rounded-lg backdrop-blur-sm block">
+            <DecryptedText
+              text={"Scroll to find out what we're all about!"}
+              animateOn="view"
+              speed={20}
+              revealDirection="center"
+              sequential={true}
+            />
           </div>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-20">
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#7a2531]/5 to-[#d4af37]/5 rounded-3xl transform rotate-1"></div>
-          <div className="absolute inset-0 bg-gradient-to-l from-[#c14242]/5 to-transparent rounded-3xl transform -rotate-1"></div>
+      <div className="min-h-screen w-full relative" style={{ height: "100vh" }}>
+        <Silk
+          speed={5}
+          scale={1}
+          color="#7a2531"
+          noiseIntensity={1.5}
+          rotation={0}
+        />
 
-          <div className="relative bg-white rounded-3xl shadow-2xl border border-[#e8d8da] p-10 md:p-12 mb-8 overflow-hidden">
-            <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-[#7a2531]/10 to-transparent rounded-br-3xl"></div>
-            <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-[#d4af37]/10 to-transparent rounded-tl-3xl"></div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <div className="text-center text-white mx-8 max-w-4xl">
+            <div className="mb-12">
+              <SplitText
+                text={
+                  "Read our blog for insights and opportunities that help you delve into the world of computer science."
+                }
+                className="p-4 bg-red-900 text-white rounded-lg drop-shadow-2xl text-5xl font-bold"
+                duration={0.1}
+                ease="power3.out"
+              />
+            </div>
+            
+            <div className="mb-12">
+              <Link
+                href="/blog"
+                className="group inline-flex items-center px-8 py-4 bg-white text-[#7a2531] font-bold text-xl rounded-lg 
+                         hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 
+                         shadow-xl hover:shadow-2xl border-2 border-transparent hover:border-yellow-400
+                         backdrop-blur-sm"
+              >
+                <span className="mr-2">Explore Our Blog</span>
+                <svg 
+                  className="w-6 h-6 transition-transform group-hover:translate-x-1" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
 
-            <div className="flex flex-col items-center gap-12">
-              <div className="relative mb-6">
-                <h2 className="text-4xl md:text-5xl font-bold text-[#7a2531] mb-2 text-center">
-                  About the Founders
-                </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-[#7a2531] to-[#d4af37] rounded-full mx-auto"></div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+              <div className="group bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 
+                            hover:bg-white/20 hover:border-white/40 hover:scale-105 
+                            transition-all duration-300 cursor-pointer hover:shadow-2xl">
+                <div className="text-3xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">
+                  Latest Insights
+                </div>
+                <p className="text-red-100 group-hover:text-white transition-colors">
+                  Stay updated with cutting-edge CS trends and industry developments
+                </p>
               </div>
-
-              <div className="grid md:grid-cols-2 gap-12 w-full">
-                <div className="flex flex-col items-center text-center space-y-6">
-                  <div className="flex-shrink-0 relative">
-                    <div className="absolute -inset-4 bg-gradient-to-r from-[#7a2531] via-[#d4af37] to-[#c14242] rounded-full opacity-20 blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-[#7a2531]/10 to-[#d4af37]/10 rounded-full p-4">
-                      <Image
-                        src="/riddhi.jpeg"
-                        alt="Riddhiman Premkumar"
-                        width={200}
-                        height={200}
-                        className="rounded-full object-cover"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="text-[#6b1e2a] space-y-4 text-lg leading-relaxed">
-                    <h3 className="text-2xl font-bold text-[#7a2531]">
-                      Riddhiman Premkumar
-                    </h3>
-                    <p>
-                      Hi, I&apos;m{" "}
-                      <span className="text-[#7a2531] font-bold text-xl">
-                        Riddhiman Premkumar
-                      </span>
-                      —a 17-year-old football-loving, tech-building student from
-                      CIS who somehow decided that juggling school, side
-                      projects, and future ambitions was a fun idea. I&apos;m
-                      the founder of this initiative, built for students who are
-                      navigating the chaos of college applications, academic
-                      life, and trying to figure out what on earth{" "}
-                      <em>&apos;career-ready skills&apos;</em> even mean.
-                    </p>
-                    <p>
-                      I&apos;m also someone who&apos;s deeply passionate about
-                      creating things that are both fun and impactful. Whether
-                      it&apos;s building quirky personal projects, exploring how
-                      complex systems work, or diving into how AI powers the
-                      tools we use every day, I love uncovering the “how” behind
-                      the “wow.” In my free time, you&apos;ll often find me
-                      experimenting with LLMs to build smart AI models, or
-                      working with Arduino and NodeMCU to bring my ideas into
-                      the physical world through hardware. I enjoy picking up
-                      new skills, solving real-world problems, and most of all —
-                      learning by building. I believe in using technology as a
-                      force for good and one that can benefit others. I&apos;m
-                      always exploring, always building, and always excited
-                      about what&apos;s next.
-                    </p>
-                    <p>
-                      So with that being said, I&apos;m starting here—empowering
-                      students like you to{" "}
-                      <span className="text-[#c14242] font-semibold">
-                        dream bigger
-                      </span>
-                      ,{" "}
-                      <span className="text-[#7a2531] font-semibold">
-                        learn smarter
-                      </span>
-                      , and{" "}
-                      <span className="text-[#d4af37] font-semibold">
-                        take charge of your future
-                      </span>
-                      . Because success shouldn&apos;t be a secret—and together,
-                      we&apos;re unlocking it.
-                    </p>
-                  </div>
+              <div className="group bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 
+                            hover:bg-white/20 hover:border-white/40 hover:scale-105 
+                            transition-all duration-300 cursor-pointer hover:shadow-2xl">
+                <div className="text-3xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">
+                  Real Projects
                 </div>
-
-                <div className="flex flex-col items-center text-center space-y-6">
-                  <div className="flex-shrink-0 relative">
-                    <div className="absolute -inset-4 bg-gradient-to-r from-[#c14242] via-[#7a2531] to-[#d4af37] rounded-full opacity-20 blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-[#c14242]/10 to-[#7a2531]/10 rounded-full p-4">
-                      <Image
-                        src="/danny.JPG"
-                        alt="Daniel Kinny"
-                        width={200}
-                        height={200}
-                        className="rounded-full object-"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="text-[#6b1e2a] space-y-4 text-lg leading-relaxed">
-                    <h3 className="text-2xl font-bold text-[#7a2531]">
-                      Daniel Kinny
-                    </h3>
-                    <p>
-                      Hey, I&apos;m{" "}
-                      <span className="text-[#7a2531] font-bold text-xl">
-                        Daniel Kinny
-                      </span>{" "}
-                      — a 17-year-old student currently studying at CIS.
-                      I&apos;ve always been drawn to computers and how they
-                      work. Over time, that interest has grown into a real
-                      passion for software engineering and computer science. I
-                      enjoy exploring how digital tools are built, breaking
-                      things down to see how they tick, and using that knowledge
-                      to create things of my own.
-                    </p>
-                    <p>
-                      I&apos;m the kind of person who&apos;s always curious —
-                      whether it&apos;s learning a new coding language,
-                      experimenting with a project, or diving into something
-                      I&apos;ve never tried before. I love the challenge of{" "}
-                      <span className="text-[#c14242] font-semibold">
-                        solving problems with tech
-                      </span>{" "}
-                      and making things that actually help people.
-                    </p>
-                    <p>
-                      These days, I&apos;m spending my time sharpening my
-                      skills, building personal projects, and figuring out how I
-                      can use what I know to make a difference. I&apos;m
-                      especially interested in things like{" "}
-                      <span className="text-[#d4af37] font-semibold">AI</span>,{" "}
-                      <span className="text-[#7a2531] font-semibold">
-                        the web
-                      </span>
-                      , and{" "}
-                      <span className="text-[#c14242] font-semibold">
-                        user-focused design
-                      </span>
-                      . One day, I hope to be part of a team that&apos;s pushing
-                      technology forward in meaningful ways.
-                    </p>
-                  </div>
+                <p className="text-red-100 group-hover:text-white transition-colors">
+                  Learn through hands-on tutorials and practical implementations
+                </p>
+              </div>
+              <div className="group bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 
+                            hover:bg-white/20 hover:border-white/40 hover:scale-105 
+                            transition-all duration-300 cursor-pointer hover:shadow-2xl">
+                <div className="text-3xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">
+                  Career Guidance
                 </div>
+                <p className="text-red-100 group-hover:text-white transition-colors">
+                  Get advice from industry professionals and successful graduates
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <Reviews />
+      <div className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#7a2531] mb-4">Why Choose Beyond the Syllabus?</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We bridge the gap between academic learning and real-world application in computer science
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-[#7a2531] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-[#7a2531] mb-3">Industry-Relevant Content</h3>
+              <p className="text-gray-600">
+                Learn the skills and technologies that are actually used in the industry, not just academic theory.
+              </p>
+            </div>
+
+            <div className="text-center p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-[#7a2531] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-[#7a2531] mb-3">Community Driven</h3>
+              <p className="text-gray-600">
+                Join a community of passionate learners and professionals sharing knowledge and experiences.
+              </p>
+            </div>
+
+            <div className="text-center p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-[#7a2531] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-[#7a2531] mb-3">Hands-On Projects</h3>
+              <p className="text-gray-600">
+                Build real projects that you can showcase in your portfolio and use in job interviews.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/*<div className="py-16 bg-[#7a2531]">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8 text-center text-white">
+            <div>
+              <div className="text-4xl font-bold mb-2">500+</div>
+              <div className="text-lg">Students Helped</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">50+</div>
+              <div className="text-lg">Blog Articles</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">25+</div>
+              <div className="text-lg">Course Topics</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">95%</div>
+              <div className="text-lg">Success Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>*/}
+
+      {
+        /*
+        code above will be commented out until we get actual stats
+        */
+      }
+
+      <div className=" bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#7a2531] mb-4">Popular Topics</h2>
+            <p className="text-xl text-gray-600">
+              Explore the most in-demand areas of computer science
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { 
+                name: "Machine Learning", 
+                color: "bg-blue-500",
+                icon: (
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 9v6m3-3H9"/>
+                  </svg>
+                )
+              },
+              { 
+                name: "Web Development", 
+                color: "bg-green-500",
+                icon: (
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 5-5v3h4v4h-4v3z"/>
+                  </svg>
+                )
+              },
+              { 
+                name: "Data Structures", 
+                color: "bg-purple-500",
+                icon: (
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                )
+              },
+              { 
+                name: "System Design", 
+                color: "bg-orange-500",
+                icon: (
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zm-10-4h6v2H9v-2zm0-4h6v2H9v-2z"/>
+                  </svg>
+                )
+              },
+              { 
+                name: "Algorithms", 
+                color: "bg-red-500",
+                icon: (
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/>
+                  </svg>
+                )
+              },
+              { 
+                name: "Cybersecurity", 
+                color: "bg-indigo-500",
+                icon: (
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11H16.2V16H7.8V11H9.2V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.4,8.7 10.4,10V11H13.6V10C13.6,8.7 12.8,8.2 12,8.2Z"/>
+                  </svg>
+                )
+              },
+              { 
+                name: "Cloud Computing", 
+                color: "bg-teal-500",
+                icon: (
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+                  </svg>
+                )
+              },
+              { 
+                name: "Mobile Development", 
+                color: "bg-pink-500",
+                icon: (
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17,19H7V5H17M17,1H7C5.89,1 5,1.89 5,3V21A2,2 0 0,0 7,23H17A2,2 0 0,0 19,21V3C19,1.89 18.1,1 17,1Z"/>
+                  </svg>
+                )
+              }
+            ].map((topic, index) => (
+              <div key={index} className="group cursor-pointer">
+                <div className="p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                  <div className={`w-12 h-12 ${topic.color} rounded-lg mb-4 group-hover:scale-110 transition-transform flex items-center justify-center`}>
+                    {topic.icon}
+                  </div>
+                  <h3 className="font-bold text-gray-800 group-hover:text-[#7a2531] transition-colors">
+                    {topic.name}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Meet Our Team Section */}
+      <div className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#7a2531] mb-4">Meet the Team Behind Beyond the Syllabus</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Passionate students and professionals dedicated to bridging the gap between academic theory and real-world application
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="bg-white p-8 rounded-lg shadow-lg">
+                <h3 className="text-2xl font-bold text-[#7a2531] mb-4">Our Mission</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We&apos;re computer science students who understand the challenges of translating classroom knowledge into practical skills. 
+                  Our mission is to provide insights, tutorials, and guidance that help fellow students excel in both academics and industry.
+                </p>
+              </div>
+              
+              <div className="bg-white p-8 rounded-lg shadow-lg">
+                <h3 className="text-2xl font-bold text-[#7a2531] mb-4">Why We Started</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Recognizing the gap between university curricula and industry demands, we created this platform to share
+                  real-world experiences, practical projects, and career insights that textbooks don&apos;t cover.
+                </p>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
+                <div className="w-24 h-24 bg-[#7a2531] rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A2.994 2.994 0 0 0 17.11 7H16c-.8 0-1.54.37-2.01.98l-2.8 3.63a1 1 0 0 0 .19 1.4l5.31 4.17V22h3zM12.83 18.02L16 15.84V18c0 1.1-.9 2-2 2h-2v2H8v-2c-1.1 0-2-.9-2-2v-5.17l2.8-3.63A2.99 2.99 0 0 1 11.17 8H12c.27 0 .54.04.8.1L10.46 11H8.17L7 13.17V18h5.83z"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-[#7a2531] mb-4">Student-Led Initiative</h3>
+                <p className="text-gray-600 mb-6">
+                  Learn about our journey, our team members, and how we&apos;re working to revolutionize CS education.
+                </p>
+              </div>
+              
+              <a
+                href="/about"
+                className="inline-flex items-center px-8 py-4 bg-[#7a2531] text-white font-bold text-lg rounded-lg 
+                         hover:bg-[#6b1e2a] transition-all duration-300 transform hover:scale-105 
+                         shadow-lg hover:shadow-xl"
+              >
+                <span className="mr-2">Learn About Our Team</span>
+                <svg 
+                  className="w-6 h-6 transition-transform group-hover:translate-x-1" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#7a2531] mb-4">Featured CIS Courses</h2>
+            <p className="text-xl text-gray-600">
+              Explore key Computer Information Systems courses and get insights beyond the classroom
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                code: "n/a",
+                name: "Computing",
+                description: "Understand the principles of computing and how they apply to real-world problems.",
+                difficulty: "Beginner",
+                color: "bg-yellow-500"
+              },
+              {
+                code: "subj code",
+                name: "IGCSE Computer Science",
+                description: "Learn fundamental programming concepts and problem-solving techniques using Python.",
+                difficulty: "Intermediate",
+                color: "bg-green-500"
+              },
+              {
+                code: "subj code", 
+                name: "IGCSE Information Technology",
+                description: "Master essential data structures and algorithms for efficient programming solutions.",
+                difficulty: "Intermediate",
+                color: "bg-blue-500"
+              },
+              {
+                code: "9618",
+                name: "A-Level Computer Science",
+                description: "Explore advanced topics in computer science including databases, networks, and security.",
+                difficulty: "Advanced",
+                color: "bg-purple-500"
+              },
+              {
+                code: "subj code",
+                name: "A-Level Information Technology",
+                description: "Learn software development methodologies and best practices for building robust applications.",
+                difficulty: "Advanced",
+                color: "bg-red-500"
+              },
+              {
+                code: "subj code",
+                name: "BTEC Information Technology",
+                description: "Dive into system design, architecture, and the principles of software engineering.",
+                difficulty: "Advanced",
+                color: "bg-teal-500"
+              },
+              
+            ].map((course, index) => (
+              <div key={index} className="group bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-all duration-300 hover:shadow-lg cursor-pointer">
+                <div className="flex items-center justify-between mb-4">
+                  <span className={`px-3 py-1 ${course.color} text-white text-sm font-bold rounded-full`}>
+                    {course.code}
+                  </span>
+                  <span className="text-sm text-gray-500 font-medium">
+                    {course.difficulty}
+                  </span>
+                </div>
+                
+                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#7a2531] transition-colors">
+                  {course.name}
+                </h3>
+                
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  {course.description}
+                </p>
+                
+                <div className="flex items-center text-[#7a2531] text-sm font-medium group-hover:text-[#6b1e2a] transition-colors">
+                  <span className="mr-2">Learn More</span>
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <a
+              href="/cis"
+              className="inline-flex items-center px-8 py-4 bg-[#7a2531] text-white font-bold text-lg rounded-lg 
+                       hover:bg-[#6b1e2a] transition-all duration-300 transform hover:scale-105 
+                       shadow-lg hover:shadow-xl"
+            >
+              <span className="mr-2">View All CIS Courses</span>
+              <svg 
+                className="w-6 h-6 transition-transform group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="py-20 bg-gradient-to-br from-[#7a2531] to-[#6b1e2a]">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Ready to Go Beyond the Syllabus?
+          </h2>
+          <p className="text-xl text-red-100 mb-8 max-w-2xl mx-auto">
+            Join thousands of students who have transformed their CS journey with practical, industry-relevant learning.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              href="/courses"
+              className="px-8 py-4 bg-white text-[#7a2531] font-bold text-lg rounded-lg 
+                       hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 
+                       shadow-lg hover:shadow-xl"
+            >
+              Browse Courses
+            </Link>
+            <Link
+              href="/blog"
+              className="px-8 py-4 bg-transparent text-white font-bold text-lg rounded-lg 
+                       border-2 border-white hover:bg-white hover:text-[#7a2531] 
+                       transition-all duration-300 transform hover:scale-105"
+            >
+              Read Our Blog
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

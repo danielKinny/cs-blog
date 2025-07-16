@@ -1,13 +1,12 @@
 import React from "react";
 import Image from "next/image";
 
-export function Page() {
+const Page = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-center gap-16">
-          {/* Mission & Vision Section */}
-          <div className="w-full max-w-6xl mx-auto">
+        <div className="flex flex-col items-center gap-16 animate-fade-in">
+          <div className="w-full max-w-6xl mx-auto animate-slide-down">
             <div className="relative mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-[#7a2531] mb-2 text-center">
                 Our Mission & Vision
@@ -16,7 +15,7 @@ export function Page() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-12">
-              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover-lift animate-slide-in-left">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-[#7a2531] to-[#c14242] rounded-full flex items-center justify-center mr-4">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -32,7 +31,7 @@ export function Page() {
                 </p>
               </div>
 
-              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover-lift animate-slide-in-left" style={{animationDelay: '0.2s'}}>
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-[#d4af37] to-[#7a2531] rounded-full flex items-center justify-center mr-4">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -50,7 +49,7 @@ export function Page() {
               </div>
             </div>
           </div>
-          <div className="w-full max-w-6xl mx-auto">
+          <div className="w-full max-w-6xl mx-auto animate-fade-in-delay">
             <div className="relative mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-[#7a2531] mb-2 text-center">
                 About the Founders
@@ -59,7 +58,7 @@ export function Page() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-16 w-full">
-            <div className="flex flex-col items-center text-center space-y-6">
+            <div className="flex flex-col items-center text-center space-y-6 animate-slide-up">
               <div className="flex-shrink-0 relative">
                 <div className="absolute max-h-4xl -inset-4 bg-gradient-to-r from-[#7a2531] via-[#d4af37] to-[#c14242] rounded-full opacity-20 blur-xl"></div>
                 <div className="relative bg-gradient-to-br from-[#7a2531]/10 to-[#d4af37]/10 rounded-full p-4">
@@ -121,7 +120,7 @@ export function Page() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center text-center space-y-6">
+            <div className="flex flex-col items-center text-center space-y-6 animate-slide-up" style={{animationDelay: '0.4s'}}>
               <div className="flex-shrink-0 relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#c14242] via-[#7a2531] to-[#d4af37] rounded-full opacity-20 blur-xl"></div>
                 <div className="relative bg-gradient-to-br from-[#c14242]/10 to-[#7a2531]/10 rounded-full p-4">
@@ -177,8 +176,7 @@ export function Page() {
             </div>
           </div>
 
-          {/* What We Offer Section */}
-          <div className="w-full max-w-6xl mx-auto">
+          <div className="w-full max-w-6xl mx-auto animate-slide-down" style={{animationDelay: '0.6s'}}>
             <div className="relative mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-[#7a2531] mb-2 text-center">
                 What We Offer
@@ -187,8 +185,8 @@ export function Page() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#7a2531] to-[#c14242] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 text-center hover-lift animate-slide-up" style={{animationDelay: '0.8s'}}>
+                <div className="w-16 h-16 bg-gradient-to-r from-[#7a2531] to-[#c14242] rounded-full flex items-center justify-center mx-auto mb-4 ">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
@@ -200,7 +198,7 @@ export function Page() {
                 </p>
               </div>
 
-              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 text-center">
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 text-center hover-lift animate-slide-up" style={{animationDelay: '1.0s'}}>
                 <div className="w-16 h-16 bg-gradient-to-r from-[#d4af37] to-[#7a2531] rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -213,8 +211,8 @@ export function Page() {
                 </p>
               </div>
 
-              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#c14242] to-[#d4af37] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 text-center hover-lift animate-slide-up" style={{animationDelay: '1.2s'}}>
+                <div className="w-16 h-16 bg-gradient-to-r from-[#c14242] to-[#d4af37] rounded-full flex items-center justify-center mx-auto mb-4 ">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
@@ -229,7 +227,7 @@ export function Page() {
           </div>
 
           {/* Contact Section */}
-          <div className="w-full max-w-4xl mx-auto">
+          <div className="w-full max-w-4xl mx-auto animate-fade-in-delay" style={{animationDelay: '1.4s'}}>
             <div className="relative mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-[#7a2531] mb-2 text-center">
                 Get In Touch
@@ -237,7 +235,7 @@ export function Page() {
               <div className="w-24 h-1 bg-gradient-to-r from-[#7a2531] to-[#d4af37] rounded-full mx-auto"></div>
             </div>
 
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover-lift">
               <div className="text-center space-y-6">
                 <p className="text-[#6b1e2a] text-lg leading-relaxed max-w-2xl mx-auto">
                   Have questions? Want to share your course experience? Looking to get involved? 
@@ -263,12 +261,11 @@ export function Page() {
             </div>
           </div>
 
-          {/* Department Credit */}
-          <div className="w-full max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-[#7a2531]/10 via-[#d4af37]/10 to-[#c14242]/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
+          <div className="w-full max-w-4xl mx-auto animate-slide-up" style={{animationDelay: '1.6s'}}>
+            <div className="bg-gradient-to-r from-[#7a2531]/10 via-[#d4af37]/10 to-[#c14242]/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover-lift">
               <div className="text-center space-y-4">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#7a2531] to-[#d4af37] rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#7a2531] to-[#d4af37] rounded-full flex items-center justify-center mr-4 ">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>

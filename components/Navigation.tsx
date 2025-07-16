@@ -28,6 +28,15 @@ export default function Navigation() {
             >
               Courses
             </Link>
+            <Link
+              href="/cis" 
+              className="text-red-100 hover:text-yellow-300 transition-colors font-medium"
+            >
+              CIS
+            </Link>
+            <Link href="/about" className="text-red-100 hover:text-yellow-300 transition-colors font-medium">
+              About
+            </Link>
           </div>
         </div>
       </div>

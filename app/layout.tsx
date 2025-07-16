@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Quantico } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const quantico = Quantico({
+  weight: ['400', '700'],
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-quantico",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#fef0f0]`}
+        className={`${quantico.variable} antialiased bg-[#fef0f0] font-quantico`}
       >
         <Navigation />
         {children}

@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: ##fef0f0;
+  --background: #fef0f0;
   --foreground: #7a2531;
   --primary: #7a2531;
   --primary-dark: #6b1e2a;
@@ -28,11 +27,11 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Quantico', sans-serif;
+  font-family: var(--font-quantico), sans-serif;
 }
 
 * {
-  font-family: 'Quantico', sans-serif;
+  font-family: var(--font-quantico), sans-serif;
 }
 
 @keyframes fade-in {
