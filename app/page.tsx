@@ -289,8 +289,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* Meet Our Team Section */}
       <div className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
@@ -369,46 +367,44 @@ export default function Home() {
                 name: "Computing",
                 description: "Understand the principles of computing and how they apply to real-world problems.",
                 difficulty: "Beginner",
-                color: "bg-yellow-500"
+                color: "bg-yellow-500",
+                href:"/cis/computing"
               },
               {
-                code: "subj code",
+                code: "0478",
                 name: "IGCSE Computer Science",
                 description: "Learn fundamental programming concepts and problem-solving techniques using Python.",
                 difficulty: "Intermediate",
-                color: "bg-green-500"
+                color: "bg-green-500",
+                href:"/cis/0478",
               },
               {
-                code: "subj code", 
+                code: "0417", 
                 name: "IGCSE Information Technology",
                 description: "Master essential data structures and algorithms for efficient programming solutions.",
                 difficulty: "Intermediate",
-                color: "bg-blue-500"
+                color: "bg-blue-500",
+                href:"/cis/0417",
               },
               {
                 code: "9618",
                 name: "A-Level Computer Science",
                 description: "Explore advanced topics in computer science including databases, networks, and security.",
                 difficulty: "Advanced",
-                color: "bg-purple-500"
+                color: "bg-purple-500",
+                href:"/cis/9618",
               },
               {
-                code: "subj code",
+                code: "9626",
                 name: "A-Level Information Technology",
                 description: "Learn software development methodologies and best practices for building robust applications.",
                 difficulty: "Advanced",
-                color: "bg-red-500"
-              },
-              {
-                code: "subj code",
-                name: "BTEC Information Technology",
-                description: "Dive into system design, architecture, and the principles of software engineering.",
-                difficulty: "Advanced",
-                color: "bg-teal-500"
+                color: "bg-red-500",
+                href:"/cis/9626"
               },
               
             ].map((course, index) => (
-              <div key={index} className="group bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-all duration-300 hover:shadow-lg cursor-pointer">
+              <a href={course.href} key={index} className="group bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition-all duration-300 hover:shadow-lg cursor-pointer">
                 <div className="flex items-center justify-between mb-4">
                   <span className={`px-3 py-1 ${course.color} text-white text-sm font-bold rounded-full`}>
                     {course.code}
@@ -432,7 +428,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
           
