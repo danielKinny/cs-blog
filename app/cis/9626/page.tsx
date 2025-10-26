@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  DocumentIcon,
   GlobeAltIcon,
   FilmIcon,
 } from "@heroicons/react/24/outline";
