@@ -50,8 +50,8 @@ export default function Home() {
                   "Read our blog for insights and opportunities that help you delve into the world of computer science."
                 }
                 className="p-4 bg-red-900 text-white rounded-lg drop-shadow-2xl text-5xl font-bold"
-                duration={0.1}
-                ease="power3.out"
+                duration={0.6}
+                ease="power3.out(1, 0.3)"
               />
             </div>
             
@@ -360,16 +360,8 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {
-                code: "n/a",
-                name: "Computing",
-                description: "Understand the principles of computing and how they apply to real-world problems.",
-                difficulty: "Beginner",
-                color: "bg-yellow-500",
-                href:"/cis/computing"
-              },
               {
                 code: "0478",
                 name: "IGCSE Computer Science",

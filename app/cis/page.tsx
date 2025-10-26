@@ -1,5 +1,41 @@
 import React from 'react'
 
+const courseData = [
+  {
+    id:1,
+    title: '9626 — CIE Information Technology',
+    description: 'Practical tools, projects and workplace skills.',
+    details: 'Learn databases, spreadsheets, document production and website authoring through project-based assignments — excellent for students who like to build tangible solutions.',
+    color: '#d4af37',
+    href: "/cis/9626"
+  },
+  {
+    id:2,
+    title: '9618 — CIE Computer Science',
+    description: 'Algorithms, programming and computational thinking.',
+    details: 'Designed for students who want to understand how software and systems are built — strong focus on problem solving and coding skills that prepare you for A-Levels.',
+    color: '#7a2531',
+    href: "/cis/9618"
+  },
+  {
+    id:3,
+    title: '0417 — IGCSE Information Technology',
+    description: 'Core ICT skills and practical digital literacy.',
+    details: 'Covers spreadsheets in Excel, presentations using Microsoft Powerpoint, data handling and digital communication — great for students seeking immediate, practical skills for study or work.',
+    color: '#d4af37',
+    href: "/cis/0417"
+  },
+  {
+    id:4,
+    title: '0478 — IGCSE Computer Science',
+    description: 'Structured introduction to programming and systems.',
+    details: 'Balanced between written theory and practical programming — ideal if you want a strong foundation in the basics of computing, regarding processors and internal workings of a computer.',
+    color: '#7a2531',
+    href: "/cis/0478"
+  },
+
+]
+
 const Page = () => {
   return (
     <div className='mx-auto min-h-screen bg-gradient-to-br from-red-50 to-red-100'>
@@ -8,30 +44,34 @@ const Page = () => {
           <h1 className='text-4xl md:text-5xl font-bold text-[#7a2531] mb-6 animate-slide-down'>
             Explore the technology courses that CIS offers
           </h1>
-          <p className='text-xl text-[#6b1e2a] max-w-3xl mx-auto animate-slide-up'>
-            Understanding the differences between IGCSE Computer Science and Information Technology 
-            to help you choose the path that aligns with your interests and career goals.
-          </p>
         </div>
 
-        <section className='mb-16 animate-fade-in-delay'>
-          <div className='bg-white rounded-lg shadow-lg p-8 border border-[#e8d8da] hover-lift transition-all duration-300'>
-            <h2 className='text-3xl font-semibold text-[#7a2531] mb-6'>Choosing Your IGCSE Technology Path</h2>
-            <p className='text-lg text-[#6b1e2a] mb-4'>
-            Technology has become an essential part of our lives. As the digital landscape continues to evolve,
-            the demand for skilled professionals in technology fields grows rapidly. Nowadays skills like prompt-engineering,
-            programming, and data analysis could be the deciding factor in the viability of your future career.
-            </p>
-            <p className='text-lg text-[#6b1e2a] mb-4'>
-            Many students face an important decision between Computer Science and Information Technology. 
-              While both subjects deal with technology, they approach it from different angles and prepare students 
-              for different aspects of the digital world.
-            </p>
+        <section className='mb-16'>
+          <p className='text-center text-[#6b1e2a] mb-8 max-w-2xl mx-auto'>A curated selection of technology courses — each one is written to prepare you for study or work, whether you prefer theory, coding or hands-on projects.</p>
+
+          <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+            {courseData.map(course =>(
+              <article key={course.id} className='relative overflow-hidden rounded-2xl p-6 bg-gradient-to-br from-white to-[#fff6f6] border border-[#f3dede] shadow-lg hover:shadow-2xl transition-shadow duration-300'>
+              <div className='flex items-start justify-between mb-4'>
+                <div className='flex items-center space-x-4'>
+                  <div>
+                    <h3 className='text-lg font-semibold text-[#7a2531]'>{course.title}</h3>
+                    <p className='text-sm text-[#6b1e2a]'>{course.description}</p>
+                  </div>
+                </div>
+              </div>
+              <p className='text-sm text-[#6b1e2a] mb-6'>{course.details}</p>
+              <div className='flex items-center justify-between'>
+                <a className={`text-sm text-[white] font-medium hover:underline bg-[${course.color}] p-2 rounded-lg`} href={course.href}>Learn more</a>
+              </div>
+            </article>))
+            }
+            
           </div>
         </section>
 
         <section className='mb-16'>
-          <h2 className='text-3xl font-semibold text-[#7a2531] mb-8 text-center animate-slide-down'>Why Choose IGCSE Technology Subjects?</h2>
+          <h2 className='text-3xl font-semibold text-[#7a2531] mb-8 text-center animate-slide-down'>Why Choose Technology Subjects?</h2>
           <div className='grid md:grid-cols-2 gap-8'>
             <div className='bg-white rounded-lg shadow-lg p-6 cursor-pointer hover-lift transition-all duration-300 transform hover:scale-105 border border-[#e8d8da] animate-slide-in-left [animation-delay:0.2s] [animation-fill-mode:forwards]'>
               <div className='w-12 h-12 bg-[#fef2f2] rounded-lg flex items-center justify-center mb-4 transition-all duration-300 hover:scale-110'>
@@ -83,190 +123,6 @@ const Page = () => {
                 Opens doors to high-demand careers in software development, system administration, 
                 digital design, and technology consulting.
               </p>
-            </div>
-          </div>
-        </section>
-
-        <section className='mb-16 animate-fade-in-delay'>
-          <h2 className='text-3xl font-semibold text-[#7a2531] mb-8 text-center'>IGCSE Computer Science vs Information Technology</h2>
-          <div className='grid md:grid-cols-2 gap-8'>
-            <div className='bg-gradient-to-br from-[#7a2531] to-[#6b1e2a] rounded-lg p-8 hover-lift transition-all duration-300 transform hover:scale-105 border-2 border-[#7a2531] shadow-xl'>
-              <h3 className='text-2xl font-semibold text-white mb-6'>IGCSE Computer Science</h3>
-              <div className='mb-6'>
-                <h4 className='text-lg font-semibold text-white mb-3'>What You&apos;ll Study:</h4>
-                <div className='space-y-3'>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
-                    <p className='text-red-100'>Programming fundamentals (Python/Pseudocode)</p>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
-                    <p className='text-red-100'>Algorithms and computational thinking</p>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
-                    <p className='text-red-100'>Data representation and number systems</p>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
-                    <p className='text-red-100'>Computer systems and architecture</p>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
-                    <p className='text-red-100'>Networks and cybersecurity</p>
-                  </div>
-                </div>
-              </div>
-              <div className='bg-white bg-opacity-90 rounded-lg p-4 border border-white border-opacity-50 shadow-inner'>
-                <h4 className='text-lg font-semibold text-[#7a2531] mb-2'>Best For:</h4>
-                <p className='text-[#6b1e2a] text-sm'>Students interested in programming, software development, and understanding how computers work at a fundamental level.</p>
-              </div>
-            </div>
-
-            <div className='bg-gradient-to-br from-[#d4af37] to-[#b8941f] rounded-lg p-8 hover-lift transition-all duration-300 transform hover:scale-105 border-2 border-[#d4af37] shadow-xl'>
-              <h3 className='text-2xl font-semibold text-white mb-6'>IGCSE Information Technology</h3>
-              <div className='mb-6'>
-                <h4 className='text-lg font-semibold text-white mb-3'>What You&apos;ll Study:</h4>
-                <div className='space-y-3'>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
-                    <p className='text-yellow-100'>Document production and data management</p>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
-                    <p className='text-yellow-100'>Website authoring and multimedia</p>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
-                    <p className='text-yellow-100'>Data analysis and modeling</p>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
-                    <p className='text-yellow-100'>Database design and implementation</p>
-                  </div>
-                  <div className='flex items-start space-x-3'>
-                    <div className='w-2 h-2 bg-white rounded-full mt-2'></div>
-                    <p className='text-yellow-100'>System life cycle and project management</p>
-                  </div>
-                </div>
-              </div>
-              <div className='bg-white bg-opacity-90 rounded-lg p-4 border border-white border-opacity-50 shadow-inner'>
-                <h4 className='text-lg font-semibold text-[#7a2531] mb-2'>Best For:</h4>
-                <p className='text-[#6b1e2a] text-sm'>Students interested in practical technology applications, digital media, and using technology to solve business problems.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className='mt-8 bg-white rounded-lg shadow-lg p-8 border border-[#e8d8da] hover-lift transition-all duration-300'>
-            <h3 className='text-2xl font-semibold text-[#7a2531] mb-6 text-center'>Assessment Methods</h3>
-            <div className='grid md:grid-cols-2 gap-8'>
-              <div>
-                <h4 className='text-lg font-semibold text-[#7a2531] mb-4'>Computer Science (CIE 0478)</h4>
-                <ul className='space-y-2 text-[#6b1e2a]'>
-                  <li className='flex items-center space-x-2'>
-                    <span className='w-2 h-2 bg-[#7a2531] rounded-full'></span>
-                    <span>Written theory paper (50%)</span>
-                  </li>
-                  <li className='flex items-center space-x-2'>
-                    <span className='w-2 h-2 bg-[#7a2531] rounded-full'></span>
-                    <span>Programming practical exam (50%)</span>
-                  </li>
-                  <li className='flex items-center space-x-2'>
-                    <span className='w-2 h-2 bg-[#7a2531] rounded-full'></span>
-                    <span>Focus on algorithmic thinking</span>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className='text-lg font-semibold text-[#7a2531] mb-4'>Information Technology (CIE 0417)</h4>
-                <ul className='space-y-2 text-[#6b1e2a]'>
-                  <li className='flex items-center space-x-2'>
-                    <span className='w-2 h-2 bg-[#d4af37] rounded-full'></span>
-                    <span>Written theory paper (40%)</span>
-                  </li>
-                  <li className='flex items-center space-x-2'>
-                    <span className='w-2 h-2 bg-[#d4af37] rounded-full'></span>
-                    <span>Practical coursework (60%)</span>
-                  </li>
-                  <li className='flex items-center space-x-2'>
-                    <span className='w-2 h-2 bg-[#d4af37] rounded-full'></span>
-                    <span>Focus on practical applications</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className='mb-16 animate-fade-in-delay'>
-          <div className='bg-gradient-to-r from-[#7a2531] to-[#c14242] rounded-lg text-white p-8 hover-lift transition-all duration-300'>
-            <h2 className='text-3xl font-semibold mb-6 text-center'>Career Pathways After IGCSE</h2>
-            <div className='grid md:grid-cols-2 gap-8'>
-              <div>
-                <h3 className='text-xl font-semibold mb-4 text-center'>Computer Science Pathways</h3>
-                <div className='space-y-4'>
-                  <div className='text-center'>
-                    <div className='w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3'>
-                      <svg className='w-8 h-8' fill='currentColor' viewBox='0 0 20 20'>
-                        <path d='M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z' />
-                      </svg>
-                    </div>
-                    <h4 className='font-semibold mb-2'>Software Development</h4>
-                    <p className='text-red-100 text-sm'>A-Level CS → University → Programming careers</p>
-                  </div>
-                  <div className='text-center'>
-                    <div className='w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3 transition-all duration-300 hover:scale-110'>
-                      <svg className='w-8 h-8' fill='currentColor' viewBox='0 0 20 20'>
-                        <path fillRule='evenodd' d='M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z' clipRule='evenodd' />
-                      </svg>
-                    </div>
-                    <h4 className='font-semibold mb-2'>Cybersecurity Specialist</h4>
-                    <p className='text-red-100 text-sm'>Strong programming foundation for security roles</p>
-                  </div>
-                  <div className='text-center'>
-                    <div className='w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3 transition-all duration-300 hover:scale-110'>
-                      <svg className='w-8 h-8' fill='currentColor' viewBox='0 0 20 20'>
-                        <path d='M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z' />
-                      </svg>
-                    </div>
-                    <h4 className='font-semibold mb-2'>Data Scientist</h4>
-                    <p className='text-red-100 text-sm'>Algorithmic thinking for data analysis</p>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className='text-xl font-semibold mb-4 text-center'>Information Technology Pathways</h3>
-                <div className='space-y-4'>
-                  <div className='text-center'>
-                    <div className='w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3 transition-all duration-300 hover:scale-110'>
-                      <svg className='w-8 h-8' fill='currentColor' viewBox='0 0 20 20'>
-                        <path d='M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z' />
-                      </svg>
-                    </div>
-                    <h4 className='font-semibold mb-2'>Digital Media Designer</h4>
-                    <p className='text-red-100 text-sm'>Multimedia skills for creative industries</p>
-                  </div>
-                  <div className='text-center'>
-                    <div className='w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3 transition-all duration-300 hover:scale-110'>
-                      <svg className='w-8 h-8' fill='currentColor' viewBox='0 0 20 20'>
-                        <path d='M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z' />
-                      </svg>
-                    </div>
-                    <h4 className='font-semibold mb-2'>Systems Administrator</h4>
-                    <p className='text-red-100 text-sm'>Network and database management skills</p>
-                  </div>
-                  <div className='text-center'>
-                    <div className='w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3 transition-all duration-300 hover:scale-110'>
-                      <svg className='w-8 h-8' fill='currentColor' viewBox='0 0 20 20'>
-                        <path d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' />
-                      </svg>
-                    </div>
-                    <h4 className='font-semibold mb-2'>Business Analyst</h4>
-                    <p className='text-red-100 text-sm'>Technology solutions for business problems</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -325,14 +181,6 @@ const Page = () => {
             Remember, both subjects offer valuable skills and exciting career opportunities. Consider your interests, 
             learning style, and future goals when making your decision.
           </p>
-          <div className='flex flex-col sm:flex-row gap-4 justify-center'>
-            <button className='bg-[#7a2531] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#6b1e2a] transition-all duration-300 transform hover:scale-105 shadow-lg'>
-              Explore Computer Science Resources
-            </button>
-            <button className='bg-[#d4af37] text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg'>
-              Discover IT Learning Materials
-            </button>
-          </div>
         </section>
       </div>
     </div>

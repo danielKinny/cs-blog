@@ -23,17 +23,8 @@ const Page = () => {
             priority
           />
           <a
-            className="text-red-900 cursor-pointer flex rounded-lg font-bold text-xl border-y p-4 duration-100 hover:bg-[#7a2531] transition-all hover:text-white"
-            href="/cstb.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <DocumentIcon className="h-7 w-7 mr-3" />
-            Information Communication Technology Textbook
-          </a>
-          <a
             className="text-red-900 cursor-pointer font-bold text-xl flex border-y rounded-lg p-4 duration-100 hover:bg-[#7a2531] transition-all hover:text-white mt-3"
-            href="://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-information-and-communication-technology-0417/"
+            href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-information-and-communication-technology-0417/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -63,7 +54,7 @@ const Page = () => {
 
       <div className="text-red-900 bg-white flex flex-col items-center p-4 rounded-xl py-8 my-20">
         <h1 className="text-4xl font-extrabold mt-2 mb-4 tracking-tight drop-shadow-sm">
-          A-Level Computer Science 9618
+          IGCSE Information Communication Technology 0417
         </h1>
         <div className="mt-4 p-8 mx-8 rounded-2xl bg-gradient-to-br from-red-50 to-white border border-red-200 shadow-xl max-w-2xl w-full transition-all duration-300 hover:shadow-lg">
           <h2 className="text-2xl font-bold mb-4 text-red-800 flex items-center gap-2">
